@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find:*)"
+    ],
+    "deny": []
+  },
+  "enabledMcpjsonServers": [
+    "context7",
+    "playwright",
+    "sequential-thinking",
+    "antv-chart"
+  ]
+}
