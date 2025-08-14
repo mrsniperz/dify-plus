@@ -76,61 +76,69 @@
 
 系统架构图如下所示：
 
-```
-┌───────────────────────────────────────────────────────────┐
-│                        展示层                              │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐     │
-│  │  Web界面     │  │  移动端界面   │  │  AR交互界面  │     │
-│  └──────────────┘  └──────────────┘  └──────────────┘     │
-├───────────────────────────────────────────────────────────┤
-│                        应用层                              │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐     │
-│  │ 维修知识库   │  │ 维修规划及   │  │ 生产看板     │     │
-│  │ 管理         │  │ 资源智能化   │  │              │     │
-│  └──────────────┘  └──────────────┘  └──────────────┘     │
-│  ┌──────────────┐                                         │
-│  │ 发动机检测   │                                         │
-│  │ 辅助         │                                         │
-│  └──────────────┘                                         │
-├───────────────────────────────────────────────────────────┤
-│                        平台层                              │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐     │
-│  │  AI服务      │  │  工作流引擎   │  │  消息队列    │     │
-│  └──────────────┘  └──────────────┘  └──────────────┘     │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐     │
-│  │  API网关     │  │  安全服务    │  │  监控服务    │     │
-│  └──────────────┘  └──────────────┘  └──────────────┘     │
-├───────────────────────────────────────────────────────────┤
-│                        数据层                              │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐     │
-│  │ 关系型数据库 │  │ 非关系型数据库│  │ 知识图谱     │     │
-│  └──────────────┘  └──────────────┘  └──────────────┘     │
-│  ┌──────────────┐  ┌──────────────┐                       │
-│  │ 数据仓库     │  │ 数据集成     │                       │
-│  └──────────────┘  └──────────────┘                       │
-├───────────────────────────────────────────────────────────┤
-│                     基础设施层                             │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐     │
-│  │  计算资源    │  │  存储资源    │  │  网络资源    │     │
-│  └──────────────┘  └──────────────┘  └──────────────┘     │
-└───────────────────────────────────────────────────────────┘
+
+
+```mermaid
+graph TD
+  A[展示层: Web/移动/AR] --> B[应用层]
+  B --> C[平台层]
+  C --> D[数据层]
+  D --> E[基础设施层]
+  subgraph 应用层
+    B1[维修知识库管理]
+    B2[维修规划及资源智能化]
+    B3[生产看板]
+    B4[发动机检测辅助]
+  end
+  B --> B1
+  B --> B2
+  B --> B3
+  B --> B4
+  subgraph 平台层
+    C1[AI服务]
+    C2[工作流引擎]
+    C3[消息队列]
+    C4[API网关]
+    C5[安全服务]
+    C6[监控服务]
+  end
+  C --> C1
+  C --> C2
+  C --> C3
+  C --> C4
+  C --> C5
+  C --> C6
+  subgraph 数据层
+    D1[关系型DB]
+    D2[非关系型DB]
+    D3[知识图谱]
+    D4[数据仓库]
+    D5[数据集成]
+  end
+  D --> D1
+  D --> D2
+  D --> D3
+  D --> D4
+  D --> D5
 ```
 
 ### 3.2 技术选型
 
 | 技术领域 | 选择方案 | 选择理由 |
 | ------- | ------- | ------- |
-| 编程语言 | Python | AI相关库丰富，开发效率高，适合进行数据处理和模型构建 |
-| 前端框架 | Vue.js | 轻量级、高性能、组件化，适合构建复杂交互界面 |
-| Web框架 | FastAPI | 高性能，适合构建RESTful API，支持异步，文档自动生成 |
-| 数据库 | PostgreSQL + MongoDB | 关系型与非关系型结合，满足结构化和非结构化数据存储需求 |
-| 搜索引擎 | Elasticsearch | 支持全文检索，适合知识库搜索功能 |
-| 知识图谱 | Neo4j | 图数据库，适合表示复杂关系，支持知识图谱构建 |
-| 消息队列 | RabbitMQ | 可靠性高，功能丰富，适合系统间异步通信 |
-| AI框架 | PyTorch + Hugging Face Transformers | 开源、灵活、强大的深度学习框架，适合NLP任务 |
-| 容器化 | Docker + Kubernetes | 标准化部署，便于管理和扩展 |
-| 数据集成 | Apache NiFi | 支持多种数据源，便于集成不同系统数据 |
-| 工作流引擎 | Camunda | 开源、功能完善，支持BPMN标准 |
+| 编程语言 | Python | 生态成熟，适合数据与 AI 开发 |
+| Web 框架 | Flask | 与项目现状一致，成熟稳定，社区生态完善 |
+| 前端框架 | Next.js | 与官方前端一致，支持 SSR/SSG，工程化能力强 |
+| 数据库 | PostgreSQL | 事务与向量扩展能力强，社区与云原生支持完善 |
+| 向量数据库 | Qdrant/Weaviate/Milvus/Pgvector 等 | 官方广泛适配，按需选型可替换 |
+| LLM 推理引擎 | Dify Runtime | 自 v0.4 起移除 LangChain，稳定可靠 |
+| 商业模型支持 | 10+ 家 | 新主流模型通常 48 小时内完成接入 |
+| MaaS 供应商 | Hugging Face、Replicate、AWS Bedrock、NVIDIA、GroqCloud、together.ai、OpenRouter | 供应商覆盖面广，灵活扩展 |
+| 本地推理 Runtime | Xorbits、OpenLLM、LocalAI、ChatGLM、Ollama、NVIDIA TIS | 满足本地/离线部署需求 |
+| 多模态能力 | ASR、GPT-4o 规格富文本 | 满足音频与富文本处理需求 |
+| 部署方式 | Docker、Helm | 标准化交付与运维 |
+| API 规格 | RESTful | 已覆盖大部分功能，便于集成 |
+| 日志与标注 | 支持日志、标注与反馈 | 便于持续优化与治理 |
 
 ### 3.3 系统分层
 
@@ -191,17 +199,12 @@
 4. 所有模块都依赖共享的基础服务，如用户认证、权限管理等
 
 模块关系图：
-```
-┌─────────────────┐      ┌─────────────────┐
-│  维修知识库管理  │─────>│ 维修规划及资源  │
-└─────────────────┘      │ 智能化          │
-        │                └─────────────────┘
-        │                        │
-        │                        │
-        ▼                        ▼
-┌─────────────────┐      ┌─────────────────┐
-│ 发动机检测辅助   │<─────│   生产看板      │
-└─────────────────┘      └─────────────────┘
+```mermaid
+graph LR
+  KB[维修知识库管理] --> PLAN[维修规划及资源智能化]
+  PLAN --> BOARD[生产看板]
+  KB --> DETECT[发动机检测辅助]
+  BOARD --> DETECT
 ```
 
 ### 4.3 主要模块详述
@@ -226,6 +229,403 @@
 **依赖关系**：
 - 依赖文档管理系统提供技术文档数据
 - 依赖NLP和知识图谱服务提供语义理解能力
+
+##### 4.3.1.1 知识库构建与维护设计
+功能描述  
+• 实现维修手册、历史维修记录、维修经验与结构化工程文件等多来源知识的接入、分段、标注、检索参数配置与全生命周期维护。
+
+输入输出规范  
+| 参数 | 类型 | 约束 | 示例 |
+|---|---|---|---|
+| datasetName | string | 非空、全局唯一 | "维修手册知识库" |
+| permission | string | only_me / all / partial | "only_me" |
+| file | file | 支持 TXT/MD/PDF/HTML/XLSX/DOCX/CSV 等 | handbooks.pdf |
+| metadata | object | 字段类型仅限 string/number/time | {"device_model":"X100","manual_version":"v2.0"} |
+| process_rule | object | 自定义/自动分段、预处理规则 | {"mode":"custom","rules":{...}} |
+
+处理逻辑  
+1. 新建知识库并设置权限范围。  
+2. 上传文档（单/批），配置预处理与分段规则，触发解析与索引。  
+3. 标注与批量编辑元数据字段；全局字段变更对全库生效。  
+4. 召回测试与引用核验，按TopK/Score调参对比效果。  
+5. 文档维护：启用/禁用/归档、更新与重建索引；分段新增/编辑/删除。  
+→ 超限：进入队列并提示预计完成时间。  
+→ 解析失败：转人工并生成问题清单。  
+→ 名称冲突：提示重命名。
+
+流程图  
+```mermaid
+flowchart TD
+  A[新建知识库/权限配置] --> B[上传文档/预处理与分段]
+  B --> C[元数据标注/批量编辑]
+  C --> D[召回测试与引用核验]
+  D --> E{通过?}
+  E -- 否 --> B
+  E -- 是 --> F[上线可检索]
+  F --> G[日常维护: 启用/禁用/归档/更新/重建索引]
+```
+
+接口定义（知识库管理，参考本项目文档“通过 API 维护知识库”）  
+```http
+POST /v1/datasets                       # 创建空知识库（body: name, permission）
+GET  /v1/datasets?page=&limit=          # 知识库列表
+DELETE /v1/datasets/{dataset_id}        # 删除知识库
+POST /v1/datasets/{dataset_id}/document/create_by_file   # 通过文件创建文档（multipart）
+POST /v1/datasets/{dataset_id}/document/create_by_text   # 通过文本创建文档（json）
+POST /v1/datasets/{dataset_id}/documents/{document_id}/update_by_file  # 更新文档
+POST /v1/datasets/{dataset_id}/documents/{document_id}/update_by_text  # 更新文档
+GET  /v1/datasets/{dataset_id}/documents                         # 文档列表
+DELETE /v1/datasets/{dataset_id}/documents/{document_id}         # 删除文档
+GET  /v1/datasets/{dataset_id}/documents/{batch}/indexing-status # 嵌入进度
+POST /v1/datasets/{dataset_id}/documents/{document_id}/segments  # 新增分段
+GET  /v1/datasets/{dataset_id}/documents/{document_id}/segments  # 查询分段
+DELETE /v1/datasets/{dataset_id}/documents/{document_id}/segments/{segment_id}  # 删除分段
+POST /v1/datasets/{dataset_id}/documents/{document_id}/segments/{segment_id}   # 更新分段
+POST /v1/datasets/{dataset_id}/metadata      # 新增元数据字段
+PATCH /v1/datasets/{dataset_id}/metadata/{metadata_id}  # 更新元数据字段
+DELETE /v1/datasets/{dataset_id}/metadata/{metadata_id} # 删除元数据字段
+GET  /v1/datasets/{dataset_id}/metadata      # 元数据列表
+```
+
+错误与异常（节选）  
+- 文件大小/类型不支持：file_too_large / unsupported_file_type。  
+- 知识库未初始化：dataset_not_initialized。  
+- 文档处理中不可编辑：document_indexing。  
+- 名称冲突：dataset_name_duplicate。  
+- 元数据不合法：invalid_metadata。
+
+##### 4.3.1.2 自然语言智能问答设计
+功能描述  
+• 实现面向维修场景的自然语言问题解析与答案生成，结合内部维修知识库进行检索增强与引用追溯。
+
+输入输出规范  
+| 参数 | 类型 | 约束 | 示例 |
+|---|---|---|---|
+| question | string | 非空，长度≤2000 | "X100启动失败怎么处理？" |
+| deviceModel | string? | 可选，存在于型号字典 | "X100" |
+| manualVersion | string? | 可选，语义为版本号/修订号 | "v2.0" |
+| timeRange | tuple<string,string>? | 可选，ISO8601时间范围 | ["2024-10-01","2024-12-31"] |
+| attachments | string[]? | 可选，指向已上传文件ID | ["file_abc123"] |
+
+处理逻辑  
+1. 解析意图与约束（型号/版本/时间）并构造检索条件。  
+2. 依据检索条件在知识库执行多路召回（控制参考段落TopK与相关度阈值）。  
+3. 汇总召回片段并进行答案生成，产出结构化结果（答案、关键步骤、引用来源、置信度）。  
+4. 输出引用与归属，可跳转至知识分段详情以便核验与修订。  
+5. 记录查询日志与指标（响应时间、召回数量、点击率）。  
+→ 相关度过低：触发重试策略（放宽阈值或改写问题），仍不足则提示补充信息。  
+→ 检索超时：中止检索并返回“请稍后重试”，记录告警。
+
+流程图  
+```mermaid
+flowchart TD
+  Q[接收问题与上下文] --> P1[意图与条件解析]
+  P1 --> R1[知识检索:TopK/Score]
+  R1 --> G1[答案生成与结构化输出]
+  G1 --> C1[引用与归属展示]
+  C1 --> L1[查询日志与指标]
+  R1 -- 低相关/超时 --> EH[异常处理与兜底]
+  EH -->|提示补充或重试| Q
+```
+
+接口对接说明（复用对话型应用 API）  
+```http
+POST /v1/chat-messages                  # 发送问题（query），可携带 inputs 与 files
+POST /v1/chat-messages/:task_id/stop    # 停止流式响应
+POST /v1/files/upload                   # 上传附件（日志/图片/表格）
+GET  /v1/messages                       # 历史消息（含 retriever_resources 引用）
+GET  /v1/conversations                  # 会话列表
+POST /v1/messages/:message_id/feedbacks # 点赞/点踩
+```
+参数映射  
+- question → query  
+- deviceModel/manualVersion/timeRange 等 → inputs 内的业务变量  
+- attachments → files（支持 image/audio/video/document，或使用 POST /v1/files/upload 先传后用）  
+- 引用与归属 → 消息返回中的 retriever_resources 字段  
+错误与超时处理 → 参考对话型应用 API 错误码规范（如 invalid_param、app_unavailable、completion_request_error 等）
+
+##### 4.3.1.3 维修手册检索与定位设计
+功能描述  
+• 实现“按手册定位”的精准检索与跳转，输出章节/页码/段落定位与上下文预览，支持版本切换与比对。
+
+输入输出规范  
+| 参数 | 类型 | 约束 | 示例 |
+|---|---|---|---|
+| query | string | 非空，长度≤2000 | "如何复位燃油控制单元？" |
+| deviceModel | string? | 可选 | "X100" |
+| manualVersion | string? | 可选 | "v2.0" |
+
+处理逻辑  
+1. 识别定位意图并限定知识库为“维修手册”。  
+2. 按相关度排序召回分段，合并上下文以展示完整语境。  
+3. 输出手册名称、章节/页码/段落号、相关度评分与预览。  
+4. 提供跳转到分段详情的定位链接，支持版本切换与对比。  
+→ 未命中：返回相近章节建议与关键词提示。  
+→ 版本缺失：允许选择其他有效版本或提交补齐请求。
+
+流程图  
+```mermaid
+flowchart TD
+  I[输入查询/限定条件] --> S1[限定手册知识库]
+  S1 --> R[召回与排序]
+  R --> M[上下文合并与预览]
+  M --> O[输出定位信息与跳转链接]
+  R -- 未命中 --> A[相近章节建议]
+  S1 -- 版本缺失 --> B[选择其他版本/补齐请求]
+```
+
+接口对接说明（复用对话型应用 API）  
+```http
+POST /v1/chat-messages                  # 发送问题（query），通过 inputs 限定 deviceModel/manualVersion
+GET  /v1/messages                       # 历史消息（含 retriever_resources 引用与定位）
+```
+参数映射  
+- query → query  
+- deviceModel/manualVersion → inputs  
+- 定位信息 → retriever_resources 中的文档名与分段定位（章节/页码/段落）  
+错误与超时处理 → 参考对话型应用 API 错误码规范
+
+##### 4.3.1.4 元数据管理设计
+功能描述  
+• 管理知识库全局与文档级元数据，支撑按来源/型号/版本/时间/标签等维度筛选与可追溯引用。
+
+输入输出规范  
+| 参数 | 类型 | 约束 | 示例 |
+|---|---|---|---|
+| field.name | string | 小写字母/数字/下划线，唯一 | "device_model" |
+| field.type | enum | string/number/time | "string" |
+| built_in.enabled | bool | 只读字段启用/禁用 | true |
+| doc.metadata | object | 仅使用已定义字段；多值允许 | {"tags":["润滑","振动"]} |
+| apply_all | bool | 批量修改是否应用于所有选中文档 | false |
+
+处理逻辑  
+1. 字段增删改：新增字段→全库可用；重命名同步全库；删除字段将从全库移除字段与值。  
+2. 文档标注：支持批量与单文档标注、重置与删除；可选“应用于所有文档”。  
+3. 内置字段：文件名、上传者、上传日期、最后更新时间、来源（可启用）。  
+→ 校验失败：提示字段名/类型不合法。  
+→ 删除确认：高风险操作需二次确认与审计记录。
+
+接口定义（节选）  
+```http
+POST  /v1/datasets/{dataset_id}/metadata                     # 新增元数据字段
+PATCH /v1/datasets/{dataset_id}/metadata/{metadata_id}       # 更新字段
+DELETE /v1/datasets/{dataset_id}/metadata/{metadata_id}      # 删除字段
+GET   /v1/datasets/{dataset_id}/metadata                     # 获取字段列表
+POST  /v1/datasets/{dataset_id}/documents/metadata           # 批量赋值文档元数据
+```
+
+##### 4.3.1.5 文档与分段维护设计
+功能描述  
+• 支持文档启用/禁用/归档、更新与重建索引；支持分段新增/编辑/删除与批量导入，保障召回质量可控。
+
+输入输出规范  
+| 操作 | 输入 | 输出 | 约束 |
+|---|---|---|---|
+| 启用/禁用 | document_id | 状态变更 | 禁用不参与检索 |
+| 归档/撤销 | document_id | 状态变更 | 归档仅可读不可编辑 |
+| 更新文档 | file/text | 新版内容 | 触发重建索引 |
+| 新增分段 | segments[] | 分段记录 | 支持CSV批量模板 |
+| 编辑/删除分段 | segment_id | 状态/内容变更 | 关键变更需审计 |
+
+处理逻辑  
+1. 文档状态：启用→参与检索；禁用/归档→不参与检索。  
+2. 更新触发解析/分段/嵌入进度；失败可重试或回滚。  
+3. 分段维护支持关键词与内容编辑，重要变更需留痕。  
+→ 文档处理中不可编辑：提示稍后重试。  
+→ 归档不可编辑：拒绝并提示。
+
+接口定义（节选）  
+```http
+POST  /v1/datasets/{dataset_id}/document/create_by_file
+POST  /v1/datasets/{dataset_id}/document/create_by_text
+POST  /v1/datasets/{dataset_id}/documents/{document_id}/update_by_file
+POST  /v1/datasets/{dataset_id}/documents/{document_id}/update_by_text
+GET   /v1/datasets/{dataset_id}/documents/{document_id}/segments
+POST  /v1/datasets/{dataset_id}/documents/{document_id}/segments
+POST  /v1/datasets/{dataset_id}/documents/{document_id}/segments/{segment_id}
+DELETE/… segments/{segment_id}
+```
+
+状态机  
+```mermaid
+stateDiagram
+    [*] --> Uploaded
+    Uploaded --> Parsing: 解析
+    Parsing --> Indexing: 分段/嵌入
+    Indexing --> Enabled: 通过校验
+    Enabled --> Disabled: 禁用
+    Enabled --> Archived: 归档
+    Disabled --> Enabled: 启用
+    Archived --> [*]
+```
+
+##### 4.3.1.6 检索参数配置与调试/引用归属设计
+功能描述  
+• 提供召回测试台，支持检索策略/TopK/Score调参对比，并展示引用与归属便于核验与修订。
+
+输入输出规范  
+| 参数 | 类型 | 约束 | 示例 |
+|---|---|---|---|
+| query | string | 非空 | "E05风扇故障" |
+| topK | int | 1~50 | 8 |
+| score_threshold | float | 0~1 | 0.3 |
+| filters | object | 元数据筛选 | {"device_model":"X100"} |
+
+处理逻辑  
+1. 输入问题→执行检索→输出召回分段（含分数/引用）。  
+2. 支持不同参数保存并行对比，便于选择上线策略。  
+3. 历史记录可查询，便于回溯调优。  
+→ 召回过少：提示放宽阈值或扩展关键词。  
+→ 质量不达标：阻断上线并要求修订分段或词表。
+
+流程图  
+```mermaid
+flowchart TD
+  T[输入/参数设置] --> R[执行检索]
+  R --> V[查看召回/引用]
+  V --> C{达标?}
+  C -- 否 --> A[调整分段/参数/词表]
+  A --> R
+  C -- 是 --> P[发布检索策略]
+```
+
+##### 4.3.1.7 请求频率限制设计
+功能描述  
+• 对知识库关键操作设置每分钟请求上限，防止滥用并保障稳定性。
+
+约束与策略  
+- 受限操作：创建/删除知识库、更新设置、上传/删除/更新文档、启用/禁用/归档、暂停/恢复处理、分段增删改、召回测试、应用内查询等。  
+- 超限行为：返回限流提示，1分钟内暂缓执行；记录告警与审计。  
+- 配置：按环境与用户组可调（默认按工作区级别）。
+
+##### 4.3.1.8 工作流集成与编排设计
+功能描述  
+• 将知识检索节点与生成节点编排为问答流程，支持变量注入与文件上传，输出结构化答案与引用。
+
+输入输出规范  
+| 参数 | 类型 | 约束 | 示例 |
+|---|---|---|---|
+| query | string | 非空 | "X100启动失败怎么处理？" |
+| variables | object | 业务变量表单 | {"device_model":"X100"} |
+| files | array | 可选，受限于文件大小/类型 | 上传文件ID |
+
+处理逻辑  
+1. 触发编排流程：接收输入→检索节点→生成节点→结构化输出→引用展示。  
+2. 支持节点级错误捕获与重试（参考可视化编排的错误处理能力）。  
+3. 支持对话会话持久化与变量管理。
+
+接口定义（对话型应用，节选）  
+```http
+POST /v1/chat-messages                  # 发送消息（streaming/blocking）
+POST /v1/chat-messages/:task_id/stop    # 停止流式响应
+POST /v1/files/upload                   # 文件上传
+GET  /v1/messages                       # 获取会话历史
+GET  /v1/conversations                  # 获取会话列表
+POST /v1/messages/:message_id/feedbacks # 点赞/点踩
+```
+
+##### 4.3.1.9 数据模型概览（模块内）
+ER关系（简化）  
+```mermaid
+erDiagram
+  KNOWLEDGEBASE ||--o{ DOCUMENT : contains
+  DOCUMENT ||--o{ SEGMENT : splits
+  KNOWLEDGEBASE ||--o{ METADATA_FIELD : defines
+  DOCUMENT ||--o{ DOC_METADATA_VALUE : labels
+  KNOWLEDGEBASE ||--o{ APP_BINDING : exposes
+  KNOWLEDGEBASE ||--o{ RETRIEVAL_RECORD : logs
+
+  KNOWLEDGEBASE {
+    uuid id PK
+    string name
+    string permission
+  }
+  DOCUMENT {
+    uuid id PK
+    uuid kb_id FK
+    string name
+    string status  // uploaded|parsing|indexing|enabled|disabled|archived
+  }
+  SEGMENT {
+    uuid id PK
+    uuid document_id FK
+    text content
+    float score
+  }
+  METADATA_FIELD {
+    uuid id PK
+    uuid kb_id FK
+    string name
+    string type // string|number|time
+  }
+  DOC_METADATA_VALUE {
+    uuid id PK
+    uuid document_id FK
+    uuid field_id FK
+    string value
+  }
+  RETRIEVAL_RECORD {
+    uuid id PK
+    uuid kb_id FK
+    string query
+    json params
+    timestamp created_at
+  }
+```
+
+##### 4.3.1.10 来源型知识库实例设计
+功能描述  
+• 针对不同来源类型分别建立知识库，使用差异化元数据与检索策略管理，确保分离治理与统一检索。
+
+实例与约束  
+| 实例 | 必填元数据 | 可选元数据 | 版本/生效策略 | 默认检索范围 |
+|---|---|---|---|---|
+| 维修手册知识库 | device_model, manual_version, effective_date | language, section | 同型号版本并存，默认仅“生效中” | 最新有效版本 |
+| 历史维修记录知识库 | work_order_id, device_model, repair_date | fault_code, solution, technician | 同工单以时间近者覆盖 | 最近N月（可配） |
+| 维修经验知识库 | topic, applicable_models, last_review_date | tags(多值), risk_level, owner | 超6个月未评审需复审 | 全量，但高风险需确认 |
+| 结构化工程知识库 | part_no, revision, effective_date | bom_id, process_phase, supplier | 同部件版本并存，记录差异 | 最新有效版本 |
+
+处理逻辑  
+1. 每类来源独立知识库与字段规范；全局元数据字段库统一治理。  
+2. 上线前进行召回测试与引用核验，覆盖典型用例集。  
+3. 运行期按策略自动筛选默认检索范围（例如最新有效/最近N月）。  
+→ 必填元数据缺失：阻断上线并提示。  
+→ 同名冲突：提示重命名或合并策略。
+
+##### 4.3.1.11 维修知识库关键词与数据索引设计
+功能描述  
+• 建立关键词体系（核心词/同义词/禁用词）与多维索引（来源/型号/版本/时间/标签），支撑高质量召回与可解释引用。
+
+配置项  
+| 配置 | 内容 | 约束 |
+|---|---|---|
+| 词表 | core_terms, synonyms[], stopwords[] | 需评审与版本化 |
+| 索引维度 | source_type, device_model, version, effective_date, tags | 映射至元数据字段 |
+| 策略参数 | topK, score_threshold | 不同场景可预设与切换 |
+
+处理逻辑  
+1. 词表治理流程：提案→评审→发布→生效→回滚。  
+2. 索引构建：支持增量/全量重建；变更触发质量门禁。  
+3. 验收：以测试用例集核验召回率/准确率，未达标阻断发布。  
+→ 词表冲突：给出合并建议。  
+→ 质量回退：自动回滚至上一版本并告警。
+
+##### 4.3.1.12 权限与审计设计
+功能描述  
+• 基于角色控制知识库与文档操作权限，关键操作留痕，满足合规要求。
+
+权限矩阵（节选）  
+| 角色 | 知识库可见性 | 字段管理 | 文档上传/更新 | 启用/禁用/归档 | 索引重建 | 调试/测试 |
+|---|---|---|---|---|---|---|
+| 所有者 | 全部 | 允许 | 允许 | 允许 | 允许 | 允许 |
+| 管理员 | 指定范围 | 允许 | 允许 | 允许 | 允许 | 允许 |
+| 编辑 | 指定范围 | 受限 | 允许 | 受限 | 受限 | 允许 |
+| 只读 | 指定范围 | 否 | 否 | 否 | 否 | 允许（只读） |
+
+审计与留痕  
+- 记录范围：字段增删改、批量赋值、文档启用/禁用/归档、分段新增/编辑/删除、索引重建、检索策略发布、词表变更。  
+- 内容包含：操作人、时间、对象、差异、原因与备注。  
+- 保留期限：≥12个月；支持导出与稽核查询。
 
 #### 4.3.2 维修规划及资源智能化模块
 
@@ -339,16 +739,107 @@
 
 ### 10.1 系统架构图
 
-> 提供系统的架构图
+```mermaid
+graph TD
+  A[展示层: Web/移动/AR] --> B[应用层]
+  B --> C[平台层]
+  C --> D[数据层]
+  D --> E[基础设施层]
+  subgraph 应用层
+    B1[维修知识库管理]
+    B2[维修规划及资源智能化]
+    B3[生产看板]
+    B4[发动机检测辅助]
+  end
+  B --> B1
+  B --> B2
+  B --> B3
+  B --> B4
+  subgraph 平台层
+    C1[AI服务]
+    C2[工作流引擎]
+    C3[消息队列]
+    C4[API网关]
+    C5[安全服务]
+    C6[监控服务]
+  end
+  C --> C1
+  C --> C2
+  C --> C3
+  C --> C4
+  C --> C5
+  C --> C6
+  subgraph 数据层
+    D1[关系型DB]
+    D2[非关系型DB]
+    D3[知识图谱]
+    D4[数据仓库]
+    D5[数据集成]
+  end
+  D --> D1
+  D --> D2
+  D --> D3
+  D --> D4
+  D --> D5
+```
 
 ### 10.2 模块关系图
 
-> 提供系统的模块关系图
+```mermaid
+graph LR
+  KB[维修知识库管理] --> PLAN[维修规划及资源智能化]
+  PLAN --> BOARD[生产看板]
+  KB --> DETECT[发动机检测辅助]
+  BOARD --> DETECT
+```
 
 ### 10.3 数据模型图
 
-> 提供系统的数据模型图
+```mermaid
+erDiagram
+  KNOWLEDGEBASE ||--o{ DOCUMENT : contains
+  DOCUMENT ||--o{ SEGMENT : splits
+  KNOWLEDGEBASE ||--o{ METADATA_FIELD : defines
+  DOCUMENT ||--o{ DOC_METADATA_VALUE : labels
+  KNOWLEDGEBASE ||--o{ APP_BINDING : exposes
+  KNOWLEDGEBASE ||--o{ RETRIEVAL_RECORD : logs
 
-### 10.4 其他附录
+  KNOWLEDGEBASE {
+    uuid id PK
+    string name
+    string permission
+  }
+  DOCUMENT {
+    uuid id PK
+    uuid kb_id FK
+    string name
+    string status
+  }
+  SEGMENT {
+    uuid id PK
+    uuid document_id FK
+    text content
+    float score
+  }
+  METADATA_FIELD {
+    uuid id PK
+    uuid kb_id FK
+    string name
+    string type
+  }
+  DOC_METADATA_VALUE {
+    uuid id PK
+    uuid document_id FK
+    uuid field_id FK
+    string value
+  }
+  RETRIEVAL_RECORD {
+    uuid id PK
+    uuid kb_id FK
+    string query
+    json params
+    timestamp created_at
+  }
+```
 
-> 提供其他相关附录 
+### 10.4 其他附录 
