@@ -1,0 +1,1118 @@
+{
+  "plan_id": "PLAN-20250817-231306",
+  "request_id": "REQ-ENH-20250817-223322",
+  "status": "optimal",
+  "created_at": "2025-08-17T23:13:06",
+  "solve_time_seconds": 0.34,
+  "execution_summary": {
+    "total_tasks": 11,
+    "makespan_hours": 35.11,
+    "total_cost": 175721.69,
+    "resource_utilization_avg": 0.8,
+    "constraints_satisfied": false,
+    "critical_path_tasks": [
+      "WP-ENH-001-JOB-01",
+      "WP-ENH-001-JOB-03",
+      "WP-ENH-002-JOB-01"
+    ]
+  },
+  "gates": [
+    {
+      "gate": "critical_tools_ready",
+      "passed": true,
+      "description": "关键工具准备完成"
+    },
+    {
+      "gate": "materials_ready",
+      "passed": true,
+      "description": "航材齐套检查通过"
+    },
+    {
+      "gate": "personnel_qualified",
+      "passed": true,
+      "description": "人员资质验证通过"
+    },
+    {
+      "gate": "workspace_available",
+      "passed": true,
+      "description": "工位可用性确认"
+    }
+  ],
+  "schedule": {
+    "task_intervals": [
+      {
+        "task_id": "WP-ENH-001-JOB-01",
+        "task_name": "任务1",
+        "work_package_id": "WP-ENH-001",
+        "task_type": "job",
+        "start_time": "2025-08-17T08:00:00",
+        "end_time": "2025-08-17T11:19:48",
+        "duration_hours": 3.33,
+        "buffer_before_hours": 0.0,
+        "buffer_after_hours": 0.44,
+        "resource_assignments": [
+          {
+            "resource_id": "MAT-009",
+            "resource_type": "material",
+            "resource_name": "燃油喷嘴",
+            "quantity": 1,
+            "unit_cost": 1509.92,
+            "total_cost": 1509.92,
+            "criticality": "high",
+            "must_kit": false
+          },
+          {
+            "resource_id": "TOOL-005",
+            "resource_type": "tool",
+            "resource_name": "振动仪",
+            "quantity": 1,
+            "calibration_valid": true,
+            "requires_certification": true
+          },
+          {
+            "resource_id": "TOOL-006",
+            "resource_type": "tool",
+            "resource_name": "振动仪",
+            "quantity": 1,
+            "calibration_valid": true,
+            "requires_certification": true
+          },
+          {
+            "resource_id": "TOOL-002",
+            "resource_type": "tool",
+            "resource_name": "专用拆装工具",
+            "quantity": 1,
+            "calibration_valid": true,
+            "requires_certification": true
+          },
+          {
+            "resource_id": "WS-005",
+            "resource_type": "workspace",
+            "resource_name": "测试工位",
+            "quantity": 1,
+            "concurrent_capacity": 1,
+            "current_utilization": 0.4
+          }
+        ],
+        "cost_breakdown": {
+          "labor_cost": 0.0,
+          "material_cost": 1509.92,
+          "equipment_cost": 0.0,
+          "total_cost": 1509.92
+        },
+        "selection_summary": "技能优先 (匹配度90%)",
+        "selection_criteria": {
+          "skill_match_score": 0.9,
+          "cost_efficiency": 0.8,
+          "resource_availability": 1.0,
+          "time_optimality": 1.0
+        },
+        "constraint_status": {
+          "qualifications_met": true,
+          "materials_sufficient": true,
+          "equipment_available": false,
+          "time_feasible": true,
+          "cost_within_budget": false,
+          "predecessor_constraints_met": true
+        },
+        "status": "scheduled",
+        "priority": "low",
+        "is_critical_path": true,
+        "predecessor_jobs": [],
+        "predecessor_constraints_met": true
+      },
+      {
+        "task_id": "WP-ENH-002-JOB-02",
+        "task_name": "任务2",
+        "work_package_id": "WP-ENH-002",
+        "task_type": "job",
+        "start_time": "2025-08-17T08:00:00",
+        "end_time": "2025-08-17T11:27:00",
+        "duration_hours": 3.45,
+        "buffer_before_hours": 0.05,
+        "buffer_after_hours": 0.25,
+        "resource_assignments": [
+          {
+            "resource_id": "MAT-004",
+            "resource_type": "material",
+            "resource_name": "燃油喷嘴",
+            "quantity": 8,
+            "unit_cost": 2667.27,
+            "total_cost": 21338.19,
+            "criticality": "low",
+            "must_kit": false
+          },
+          {
+            "resource_id": "MAT-005",
+            "resource_type": "material",
+            "resource_name": "轴承",
+            "quantity": 2,
+            "unit_cost": 2895.57,
+            "total_cost": 5791.14,
+            "criticality": "medium",
+            "must_kit": false
+          },
+          {
+            "resource_id": "MAT-001",
+            "resource_type": "material",
+            "resource_name": "滤芯",
+            "quantity": 2,
+            "unit_cost": 2305.07,
+            "total_cost": 4610.14,
+            "criticality": "medium",
+            "must_kit": false
+          },
+          {
+            "resource_id": "EQP-001",
+            "resource_type": "equipment",
+            "resource_name": "发动机吊车",
+            "quantity": 1,
+            "hourly_cost": 853.07,
+            "total_cost": 3225.38,
+            "is_exclusive": true,
+            "setup_time_hours": 0.79
+          },
+          {
+            "resource_id": "TOOL-004",
+            "resource_type": "tool",
+            "resource_name": "内窥镜",
+            "quantity": 1,
+            "calibration_valid": true,
+            "requires_certification": true
+          },
+          {
+            "resource_id": "TOOL-007",
+            "resource_type": "tool",
+            "resource_name": "测厚仪",
+            "quantity": 1,
+            "calibration_valid": true,
+            "requires_certification": false
+          },
+          {
+            "resource_id": "TOOL-003",
+            "resource_type": "tool",
+            "resource_name": "扭力扳手",
+            "quantity": 1,
+            "calibration_valid": true,
+            "requires_certification": true
+          },
+          {
+            "resource_id": "WS-003",
+            "resource_type": "workspace",
+            "resource_name": "检查工位",
+            "quantity": 1,
+            "concurrent_capacity": 3,
+            "current_utilization": 0.5
+          }
+        ],
+        "cost_breakdown": {
+          "labor_cost": 0.0,
+          "material_cost": 31739.47,
+          "equipment_cost": 3225.38,
+          "total_cost": 34964.85
+        },
+        "selection_summary": "最佳匹配 (技能90% + 成本90%)",
+        "selection_criteria": {
+          "skill_match_score": 0.9,
+          "cost_efficiency": 0.9,
+          "resource_availability": 1.0,
+          "time_optimality": 1.0
+        },
+        "constraint_status": {
+          "qualifications_met": true,
+          "materials_sufficient": true,
+          "equipment_available": true,
+          "time_feasible": true,
+          "cost_within_budget": true,
+          "predecessor_constraints_met": true
+        },
+        "status": "scheduled",
+        "priority": "low",
+        "is_critical_path": false,
+        "predecessor_jobs": [],
+        "predecessor_constraints_met": true
+      },
+      {
+        "task_id": "WP-ENH-001-JOB-02",
+        "task_name": "任务2",
+        "work_package_id": "WP-ENH-001",
+        "task_type": "job",
+        "start_time": "2025-08-17T11:37:17",
+        "end_time": "2025-08-17T18:50:29",
+        "duration_hours": 7.22,
+        "buffer_before_hours": 0.47,
+        "buffer_after_hours": 0.23,
+        "resource_assignments": [
+          {
+            "resource_id": "MAT-010",
+            "resource_type": "material",
+            "resource_name": "传感器",
+            "quantity": 1,
+            "unit_cost": 1158.32,
+            "total_cost": 1158.32,
+            "criticality": "low",
+            "must_kit": true
+          },
+          {
+            "resource_id": "MAT-009",
+            "resource_type": "material",
+            "resource_name": "燃油喷嘴",
+            "quantity": 5,
+            "unit_cost": 1509.92,
+            "total_cost": 7549.62,
+            "criticality": "high",
+            "must_kit": false
+          },
+          {
+            "resource_id": "MAT-005",
+            "resource_type": "material",
+            "resource_name": "轴承",
+            "quantity": 1,
+            "unit_cost": 2895.57,
+            "total_cost": 2895.57,
+            "criticality": "medium",
+            "must_kit": false
+          },
+          {
+            "resource_id": "TOOL-001",
+            "resource_type": "tool",
+            "resource_name": "专用拆装工具",
+            "quantity": 1,
+            "calibration_valid": true,
+            "requires_certification": true
+          },
+          {
+            "resource_id": "TOOL-006",
+            "resource_type": "tool",
+            "resource_name": "振动仪",
+            "quantity": 1,
+            "calibration_valid": true,
+            "requires_certification": true
+          },
+          {
+            "resource_id": "WS-005",
+            "resource_type": "workspace",
+            "resource_name": "测试工位",
+            "quantity": 1,
+            "concurrent_capacity": 1,
+            "current_utilization": 0.7
+          }
+        ],
+        "cost_breakdown": {
+          "labor_cost": 0.0,
+          "material_cost": 11603.51,
+          "equipment_cost": 0.0,
+          "total_cost": 11603.51
+        },
+        "selection_summary": "技能优先 (匹配度90%)",
+        "selection_criteria": {
+          "skill_match_score": 0.9,
+          "cost_efficiency": 0.8,
+          "resource_availability": 0.9,
+          "time_optimality": 0.9
+        },
+        "constraint_status": {
+          "qualifications_met": false,
+          "materials_sufficient": true,
+          "equipment_available": true,
+          "time_feasible": true,
+          "cost_within_budget": false,
+          "predecessor_constraints_met": true,
+          "predecessor_count": 1,
+          "predecessors_completed": 1
+        },
+        "status": "scheduled",
+        "priority": "low",
+        "is_critical_path": false,
+        "predecessor_jobs": [
+          "WP-ENH-001-JOB-01"
+        ],
+        "predecessor_constraints_met": true
+      },
+      {
+        "task_id": "WP-ENH-001-JOB-03",
+        "task_name": "任务3",
+        "work_package_id": "WP-ENH-001",
+        "task_type": "job",
+        "start_time": "2025-08-17T11:43:01",
+        "end_time": "2025-08-17T19:22:01",
+        "duration_hours": 7.65,
+        "buffer_before_hours": 0.11,
+        "buffer_after_hours": 0.36,
+        "resource_assignments": [
+          {
+            "resource_id": "MAT-008",
+            "resource_type": "material",
+            "resource_name": "齿轮",
+            "quantity": 2,
+            "unit_cost": 1792.21,
+            "total_cost": 3584.41,
+            "criticality": "medium",
+            "must_kit": true
+          },
+          {
+            "resource_id": "MAT-004",
+            "resource_type": "material",
+            "resource_name": "燃油喷嘴",
+            "quantity": 5,
+            "unit_cost": 2667.27,
+            "total_cost": 13336.37,
+            "criticality": "low",
+            "must_kit": false
+          },
+          {
+            "resource_id": "TOOL-001",
+            "resource_type": "tool",
+            "resource_name": "专用拆装工具",
+            "quantity": 1,
+            "calibration_valid": true,
+            "requires_certification": true
+          },
+          {
+            "resource_id": "WS-005",
+            "resource_type": "workspace",
+            "resource_name": "测试工位",
+            "quantity": 1,
+            "concurrent_capacity": 1,
+            "current_utilization": 0.7
+          }
+        ],
+        "cost_breakdown": {
+          "labor_cost": 0.0,
+          "material_cost": 16920.78,
+          "equipment_cost": 0.0,
+          "total_cost": 16920.78
+        },
+        "selection_summary": "最佳匹配 (技能90% + 成本90%)",
+        "selection_criteria": {
+          "skill_match_score": 0.9,
+          "cost_efficiency": 0.9,
+          "resource_availability": 0.9,
+          "time_optimality": 0.9
+        },
+        "constraint_status": {
+          "qualifications_met": true,
+          "materials_sufficient": true,
+          "equipment_available": false,
+          "time_feasible": true,
+          "cost_within_budget": false,
+          "predecessor_constraints_met": true,
+          "predecessor_count": 1,
+          "predecessors_completed": 1
+        },
+        "status": "scheduled",
+        "priority": "low",
+        "is_critical_path": true,
+        "predecessor_jobs": [
+          "WP-ENH-001-JOB-01"
+        ],
+        "predecessor_constraints_met": true
+      },
+      {
+        "task_id": "WP-ENH-001-JOB-04",
+        "task_name": "任务4",
+        "work_package_id": "WP-ENH-001",
+        "task_type": "job",
+        "start_time": "2025-08-17T19:39:43",
+        "end_time": "2025-08-17T23:28:55",
+        "duration_hours": 3.82,
+        "buffer_before_hours": 0.45,
+        "buffer_after_hours": 0.2,
+        "resource_assignments": [
+          {
+            "resource_id": "MAT-004",
+            "resource_type": "material",
+            "resource_name": "燃油喷嘴",
+            "quantity": 6,
+            "unit_cost": 2667.27,
+            "total_cost": 16003.64,
+            "criticality": "low",
+            "must_kit": false
+          },
+          {
+            "resource_id": "MAT-002",
+            "resource_type": "material",
+            "resource_name": "涡轮叶片",
+            "quantity": 2,
+            "unit_cost": 478.51,
+            "total_cost": 957.02,
+            "criticality": "medium",
+            "must_kit": false
+          },
+          {
+            "resource_id": "EQP-001",
+            "resource_type": "equipment",
+            "resource_name": "发动机吊车",
+            "quantity": 1,
+            "hourly_cost": 853.07,
+            "total_cost": 3546.08,
+            "is_exclusive": true,
+            "setup_time_hours": 0.64
+          },
+          {
+            "resource_id": "TOOL-007",
+            "resource_type": "tool",
+            "resource_name": "测厚仪",
+            "quantity": 1,
+            "calibration_valid": true,
+            "requires_certification": false
+          },
+          {
+            "resource_id": "TOOL-002",
+            "resource_type": "tool",
+            "resource_name": "专用拆装工具",
+            "quantity": 1,
+            "calibration_valid": true,
+            "requires_certification": true
+          },
+          {
+            "resource_id": "TOOL-005",
+            "resource_type": "tool",
+            "resource_name": "振动仪",
+            "quantity": 1,
+            "calibration_valid": true,
+            "requires_certification": true
+          },
+          {
+            "resource_id": "WS-001",
+            "resource_type": "workspace",
+            "resource_name": "拆解工位",
+            "quantity": 1,
+            "concurrent_capacity": 2,
+            "current_utilization": 0.2
+          }
+        ],
+        "cost_breakdown": {
+          "labor_cost": 0.0,
+          "material_cost": 16960.66,
+          "equipment_cost": 3546.08,
+          "total_cost": 20506.74
+        },
+        "selection_summary": "技能优先 (匹配度90%)",
+        "selection_criteria": {
+          "skill_match_score": 0.9,
+          "cost_efficiency": 0.8,
+          "resource_availability": 1.0,
+          "time_optimality": 1.0
+        },
+        "constraint_status": {
+          "qualifications_met": true,
+          "materials_sufficient": true,
+          "equipment_available": true,
+          "time_feasible": true,
+          "cost_within_budget": true,
+          "predecessor_constraints_met": true,
+          "predecessor_count": 2,
+          "predecessors_completed": 2
+        },
+        "status": "scheduled",
+        "priority": "low",
+        "is_critical_path": false,
+        "predecessor_jobs": [
+          "WP-ENH-001-JOB-02",
+          "WP-ENH-001-JOB-03"
+        ],
+        "predecessor_constraints_met": true
+      },
+      {
+        "task_id": "WP-ENH-002-JOB-01",
+        "task_name": "任务1",
+        "work_package_id": "WP-ENH-002",
+        "task_type": "job",
+        "start_time": "2025-08-17T23:34:59",
+        "end_time": "2025-08-18T01:39:47",
+        "duration_hours": 2.08,
+        "buffer_before_hours": 0.09,
+        "buffer_after_hours": 0.42,
+        "resource_assignments": [
+          {
+            "resource_id": "MAT-008",
+            "resource_type": "material",
+            "resource_name": "齿轮",
+            "quantity": 6,
+            "unit_cost": 1792.21,
+            "total_cost": 10753.24,
+            "criticality": "medium",
+            "must_kit": true
+          },
+          {
+            "resource_id": "MAT-003",
+            "resource_type": "material",
+            "resource_name": "压气机叶片",
+            "quantity": 1,
+            "unit_cost": 4507.61,
+            "total_cost": 4507.61,
+            "criticality": "low",
+            "must_kit": false
+          },
+          {
+            "resource_id": "MAT-001",
+            "resource_type": "material",
+            "resource_name": "滤芯",
+            "quantity": 4,
+            "unit_cost": 2305.07,
+            "total_cost": 9220.27,
+            "criticality": "medium",
+            "must_kit": false
+          },
+          {
+            "resource_id": "EQP-001",
+            "resource_type": "equipment",
+            "resource_name": "发动机吊车",
+            "quantity": 1,
+            "hourly_cost": 853.07,
+            "total_cost": 2061.85,
+            "is_exclusive": true,
+            "setup_time_hours": 1.77
+          },
+          {
+            "resource_id": "TOOL-004",
+            "resource_type": "tool",
+            "resource_name": "内窥镜",
+            "quantity": 1,
+            "calibration_valid": true,
+            "requires_certification": true
+          },
+          {
+            "resource_id": "TOOL-002",
+            "resource_type": "tool",
+            "resource_name": "专用拆装工具",
+            "quantity": 1,
+            "calibration_valid": true,
+            "requires_certification": true
+          },
+          {
+            "resource_id": "WS-004",
+            "resource_type": "workspace",
+            "resource_name": "装配工位",
+            "quantity": 1,
+            "concurrent_capacity": 2,
+            "current_utilization": 0.4
+          }
+        ],
+        "cost_breakdown": {
+          "labor_cost": 0.0,
+          "material_cost": 24481.12,
+          "equipment_cost": 2061.85,
+          "total_cost": 26542.97
+        },
+        "selection_summary": "最佳匹配 (技能90% + 成本90%)",
+        "selection_criteria": {
+          "skill_match_score": 0.9,
+          "cost_efficiency": 0.9,
+          "resource_availability": 1.0,
+          "time_optimality": 0.9
+        },
+        "constraint_status": {
+          "qualifications_met": true,
+          "materials_sufficient": true,
+          "equipment_available": true,
+          "time_feasible": true,
+          "cost_within_budget": true,
+          "predecessor_constraints_met": true,
+          "predecessor_count": 1,
+          "predecessors_completed": 1
+        },
+        "status": "scheduled",
+        "priority": "low",
+        "is_critical_path": true,
+        "predecessor_jobs": [
+          "WP-ENH-001-JOB-04"
+        ],
+        "predecessor_constraints_met": true
+      },
+      {
+        "task_id": "WP-ENH-002-JOB-03",
+        "task_name": "任务3",
+        "work_package_id": "WP-ENH-002",
+        "task_type": "job",
+        "start_time": "2025-08-18T01:46:54",
+        "end_time": "2025-08-18T05:12:06",
+        "duration_hours": 3.42,
+        "buffer_before_hours": 0.06,
+        "buffer_after_hours": 0.08,
+        "resource_assignments": [
+          {
+            "resource_id": "MAT-010",
+            "resource_type": "material",
+            "resource_name": "传感器",
+            "quantity": 1,
+            "unit_cost": 1158.32,
+            "total_cost": 1158.32,
+            "criticality": "low",
+            "must_kit": true
+          },
+          {
+            "resource_id": "EQP-003",
+            "resource_type": "equipment",
+            "resource_name": "清洗设备",
+            "quantity": 1,
+            "hourly_cost": 291.33,
+            "total_cost": 1318.71,
+            "is_exclusive": true,
+            "setup_time_hours": 1.18
+          },
+          {
+            "resource_id": "TOOL-003",
+            "resource_type": "tool",
+            "resource_name": "扭力扳手",
+            "quantity": 1,
+            "calibration_valid": true,
+            "requires_certification": true
+          },
+          {
+            "resource_id": "TOOL-001",
+            "resource_type": "tool",
+            "resource_name": "专用拆装工具",
+            "quantity": 1,
+            "calibration_valid": true,
+            "requires_certification": true
+          },
+          {
+            "resource_id": "TOOL-002",
+            "resource_type": "tool",
+            "resource_name": "专用拆装工具",
+            "quantity": 1,
+            "calibration_valid": true,
+            "requires_certification": true
+          },
+          {
+            "resource_id": "WS-004",
+            "resource_type": "workspace",
+            "resource_name": "装配工位",
+            "quantity": 1,
+            "concurrent_capacity": 2,
+            "current_utilization": 0.6
+          }
+        ],
+        "cost_breakdown": {
+          "labor_cost": 0.0,
+          "material_cost": 1158.32,
+          "equipment_cost": 1318.71,
+          "total_cost": 2477.03
+        },
+        "selection_summary": "技能优先 (匹配度90%)",
+        "selection_criteria": {
+          "skill_match_score": 0.9,
+          "cost_efficiency": 0.8,
+          "resource_availability": 0.9,
+          "time_optimality": 0.9
+        },
+        "constraint_status": {
+          "qualifications_met": true,
+          "materials_sufficient": true,
+          "equipment_available": true,
+          "time_feasible": true,
+          "cost_within_budget": true,
+          "predecessor_constraints_met": true,
+          "predecessor_count": 2,
+          "predecessors_completed": 2
+        },
+        "status": "scheduled",
+        "priority": "low",
+        "is_critical_path": true,
+        "predecessor_jobs": [
+          "WP-ENH-002-JOB-01",
+          "WP-ENH-002-JOB-02"
+        ],
+        "predecessor_constraints_met": true
+      },
+      {
+        "task_id": "WP-ENH-002-JOB-04",
+        "task_name": "任务4",
+        "work_package_id": "WP-ENH-002",
+        "task_type": "job",
+        "start_time": "2025-08-18T05:31:11",
+        "end_time": "2025-08-18T08:11:23",
+        "duration_hours": 2.67,
+        "buffer_before_hours": 0.16,
+        "buffer_after_hours": 0.17,
+        "resource_assignments": [
+          {
+            "resource_id": "MAT-007",
+            "resource_type": "material",
+            "resource_name": "燃油喷嘴",
+            "quantity": 2,
+            "unit_cost": 257.16,
+            "total_cost": 514.31,
+            "criticality": "high",
+            "must_kit": false
+          },
+          {
+            "resource_id": "MAT-004",
+            "resource_type": "material",
+            "resource_name": "燃油喷嘴",
+            "quantity": 7,
+            "unit_cost": 2667.27,
+            "total_cost": 18670.91,
+            "criticality": "low",
+            "must_kit": false
+          },
+          {
+            "resource_id": "MAT-002",
+            "resource_type": "material",
+            "resource_name": "涡轮叶片",
+            "quantity": 1,
+            "unit_cost": 478.51,
+            "total_cost": 478.51,
+            "criticality": "medium",
+            "must_kit": false
+          },
+          {
+            "resource_id": "TOOL-007",
+            "resource_type": "tool",
+            "resource_name": "测厚仪",
+            "quantity": 1,
+            "calibration_valid": true,
+            "requires_certification": false
+          },
+          {
+            "resource_id": "WS-005",
+            "resource_type": "workspace",
+            "resource_name": "测试工位",
+            "quantity": 1,
+            "concurrent_capacity": 1,
+            "current_utilization": 0.5
+          }
+        ],
+        "cost_breakdown": {
+          "labor_cost": 0.0,
+          "material_cost": 19663.73,
+          "equipment_cost": 0.0,
+          "total_cost": 19663.73
+        },
+        "selection_summary": "最佳匹配 (技能90% + 成本90%)",
+        "selection_criteria": {
+          "skill_match_score": 0.9,
+          "cost_efficiency": 0.9,
+          "resource_availability": 1.0,
+          "time_optimality": 0.9
+        },
+        "constraint_status": {
+          "qualifications_met": true,
+          "materials_sufficient": true,
+          "equipment_available": true,
+          "time_feasible": true,
+          "cost_within_budget": false,
+          "predecessor_constraints_met": true,
+          "predecessor_count": 1,
+          "predecessors_completed": 1
+        },
+        "status": "scheduled",
+        "priority": "low",
+        "is_critical_path": true,
+        "predecessor_jobs": [
+          "WP-ENH-002-JOB-03"
+        ],
+        "predecessor_constraints_met": true
+      },
+      {
+        "task_id": "WP-ENH-002-JOB-05",
+        "task_name": "任务5",
+        "work_package_id": "WP-ENH-002",
+        "task_type": "job",
+        "start_time": "2025-08-18T08:39:36",
+        "end_time": "2025-08-18T10:39:00",
+        "duration_hours": 1.99,
+        "buffer_before_hours": 0.16,
+        "buffer_after_hours": 0.4,
+        "resource_assignments": [
+          {
+            "resource_id": "MAT-008",
+            "resource_type": "material",
+            "resource_name": "齿轮",
+            "quantity": 9,
+            "unit_cost": 1792.21,
+            "total_cost": 16129.86,
+            "criticality": "medium",
+            "must_kit": true
+          },
+          {
+            "resource_id": "EQP-004",
+            "resource_type": "equipment",
+            "resource_name": "烘干炉",
+            "quantity": 1,
+            "hourly_cost": 968.75,
+            "total_cost": 2044.47,
+            "is_exclusive": true,
+            "setup_time_hours": 1.06
+          },
+          {
+            "resource_id": "TOOL-007",
+            "resource_type": "tool",
+            "resource_name": "测厚仪",
+            "quantity": 1,
+            "calibration_valid": true,
+            "requires_certification": false
+          },
+          {
+            "resource_id": "TOOL-001",
+            "resource_type": "tool",
+            "resource_name": "专用拆装工具",
+            "quantity": 1,
+            "calibration_valid": true,
+            "requires_certification": true
+          },
+          {
+            "resource_id": "WS-004",
+            "resource_type": "workspace",
+            "resource_name": "装配工位",
+            "quantity": 1,
+            "concurrent_capacity": 2,
+            "current_utilization": 0.2
+          }
+        ],
+        "cost_breakdown": {
+          "labor_cost": 0.0,
+          "material_cost": 16129.86,
+          "equipment_cost": 2044.47,
+          "total_cost": 18174.33
+        },
+        "selection_summary": "最佳匹配 (技能90% + 成本90%)",
+        "selection_criteria": {
+          "skill_match_score": 0.9,
+          "cost_efficiency": 0.9,
+          "resource_availability": 0.9,
+          "time_optimality": 1.0
+        },
+        "constraint_status": {
+          "qualifications_met": true,
+          "materials_sufficient": true,
+          "equipment_available": true,
+          "time_feasible": true,
+          "cost_within_budget": true,
+          "predecessor_constraints_met": true,
+          "predecessor_count": 1,
+          "predecessors_completed": 1
+        },
+        "status": "scheduled",
+        "priority": "low",
+        "is_critical_path": false,
+        "predecessor_jobs": [
+          "WP-ENH-002-JOB-04"
+        ],
+        "predecessor_constraints_met": true
+      },
+      {
+        "task_id": "WP-ENH-003-JOB-01",
+        "task_name": "任务1",
+        "work_package_id": "WP-ENH-003",
+        "task_type": "job",
+        "start_time": "2025-08-18T11:02:41",
+        "end_time": "2025-08-18T15:36:53",
+        "duration_hours": 4.57,
+        "buffer_before_hours": 0.4,
+        "buffer_after_hours": 0.01,
+        "resource_assignments": [
+          {
+            "resource_id": "MAT-005",
+            "resource_type": "material",
+            "resource_name": "轴承",
+            "quantity": 3,
+            "unit_cost": 2895.57,
+            "total_cost": 8686.71,
+            "criticality": "medium",
+            "must_kit": false
+          },
+          {
+            "resource_id": "TOOL-002",
+            "resource_type": "tool",
+            "resource_name": "专用拆装工具",
+            "quantity": 1,
+            "calibration_valid": true,
+            "requires_certification": true
+          },
+          {
+            "resource_id": "WS-001",
+            "resource_type": "workspace",
+            "resource_name": "拆解工位",
+            "quantity": 1,
+            "concurrent_capacity": 2,
+            "current_utilization": 0.2
+          }
+        ],
+        "cost_breakdown": {
+          "labor_cost": 0.0,
+          "material_cost": 8686.71,
+          "equipment_cost": 0.0,
+          "total_cost": 8686.71
+        },
+        "selection_summary": "技能优先 (匹配度90%)",
+        "selection_criteria": {
+          "skill_match_score": 0.9,
+          "cost_efficiency": 0.8,
+          "resource_availability": 0.9,
+          "time_optimality": 0.9
+        },
+        "constraint_status": {
+          "qualifications_met": false,
+          "materials_sufficient": true,
+          "equipment_available": true,
+          "time_feasible": true,
+          "cost_within_budget": true,
+          "predecessor_constraints_met": true,
+          "predecessor_count": 1,
+          "predecessors_completed": 1
+        },
+        "status": "scheduled",
+        "priority": "low",
+        "is_critical_path": true,
+        "predecessor_jobs": [
+          "WP-ENH-002-JOB-05"
+        ],
+        "predecessor_constraints_met": true
+      },
+      {
+        "task_id": "WP-ENH-003-JOB-02",
+        "task_name": "任务2",
+        "work_package_id": "WP-ENH-003",
+        "task_type": "job",
+        "start_time": "2025-08-18T15:54:49",
+        "end_time": "2025-08-18T19:06:49",
+        "duration_hours": 3.2,
+        "buffer_before_hours": 0.37,
+        "buffer_after_hours": 0.28,
+        "resource_assignments": [
+          {
+            "resource_id": "MAT-004",
+            "resource_type": "material",
+            "resource_name": "燃油喷嘴",
+            "quantity": 1,
+            "unit_cost": 2667.27,
+            "total_cost": 2667.27,
+            "criticality": "low",
+            "must_kit": false
+          },
+          {
+            "resource_id": "MAT-002",
+            "resource_type": "material",
+            "resource_name": "涡轮叶片",
+            "quantity": 1,
+            "unit_cost": 478.51,
+            "total_cost": 478.51,
+            "criticality": "medium",
+            "must_kit": false
+          },
+          {
+            "resource_id": "MAT-001",
+            "resource_type": "material",
+            "resource_name": "滤芯",
+            "quantity": 5,
+            "unit_cost": 2305.07,
+            "total_cost": 11525.34,
+            "criticality": "medium",
+            "must_kit": false
+          },
+          {
+            "resource_id": "TOOL-005",
+            "resource_type": "tool",
+            "resource_name": "振动仪",
+            "quantity": 1,
+            "calibration_valid": true,
+            "requires_certification": true
+          },
+          {
+            "resource_id": "WS-003",
+            "resource_type": "workspace",
+            "resource_name": "检查工位",
+            "quantity": 1,
+            "concurrent_capacity": 3,
+            "current_utilization": 0.2
+          }
+        ],
+        "cost_breakdown": {
+          "labor_cost": 0.0,
+          "material_cost": 14671.12,
+          "equipment_cost": 0.0,
+          "total_cost": 14671.12
+        },
+        "selection_summary": "技能优先 (匹配度90%)",
+        "selection_criteria": {
+          "skill_match_score": 0.9,
+          "cost_efficiency": 0.8,
+          "resource_availability": 0.9,
+          "time_optimality": 0.9
+        },
+        "constraint_status": {
+          "qualifications_met": true,
+          "materials_sufficient": true,
+          "equipment_available": true,
+          "time_feasible": true,
+          "cost_within_budget": false,
+          "predecessor_constraints_met": true,
+          "predecessor_count": 1,
+          "predecessors_completed": 1
+        },
+        "status": "scheduled",
+        "priority": "low",
+        "is_critical_path": true,
+        "predecessor_jobs": [
+          "WP-ENH-003-JOB-01"
+        ],
+        "predecessor_constraints_met": true
+      }
+    ]
+  },
+  "metrics": {
+    "time_metrics": {
+      "makespan_hours": 35.11,
+      "total_duration_hours": 43.4,
+      "critical_path_length_hours": 35.11,
+      "average_task_duration_hours": 3.95
+    },
+    "cost_metrics": {
+      "total_cost": 175721.69,
+      "labor_cost": 0.0,
+      "material_cost": 163525.2,
+      "equipment_cost": 12196.49,
+      "cost_per_hour": 5004.38
+    },
+    "resource_metrics": {
+      "total_resources_used": 23,
+      "human_utilization_avg": 0.8,
+      "equipment_utilization_avg": 0.8,
+      "workspace_utilization_avg": 0.4
+    },
+    "quality_metrics": {
+      "constraints_satisfied": true,
+      "optimization_score": 0.9,
+      "feasibility_margin": 0.1
+    }
+  },
+  "resource_utilization": {
+    "MAT-009": 0.8,
+    "TOOL-005": 0.9,
+    "TOOL-006": 0.9,
+    "TOOL-002": 0.9,
+    "WS-005": 0.9,
+    "MAT-004": 0.9,
+    "MAT-005": 0.9,
+    "MAT-001": 0.8,
+    "EQP-001": 1.0,
+    "TOOL-004": 0.6,
+    "TOOL-007": 0.9,
+    "TOOL-003": 0.8,
+    "WS-003": 0.7,
+    "MAT-010": 0.8,
+    "TOOL-001": 0.9,
+    "MAT-008": 0.9,
+    "MAT-002": 0.8,
+    "WS-001": 0.9,
+    "MAT-003": 0.2,
+    "WS-004": 0.8,
+    "EQP-003": 0.4,
+    "MAT-007": 0.3,
+    "EQP-004": 0.2
+  },
+  "metadata": {
+    "solver_status": "optimal",
+    "solver_version": "CP-SAT 9.7",
+    "constraints_count": 88,
+    "variables_count": 99,
+    "optimization_objectives": [
+      "minimize_makespan",
+      "minimize_cost",
+      "maximize_utilization"
+    ]
+  }
+}

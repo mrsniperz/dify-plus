@@ -6,4 +6,5 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "ortools>=9.14.6206",
+    "requests>=2.31.0",
 ]

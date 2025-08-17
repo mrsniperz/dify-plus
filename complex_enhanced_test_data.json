@@ -1,0 +1,4124 @@
+{
+  "work_packages": [
+    {
+      "work_package_id": "WP-ENH-001",
+      "name": "增强测试工作包1",
+      "description": "包含完整资源约束的第1个测试工作包",
+      "priority": "low",
+      "estimated_duration_hours": 55,
+      "deadline": "2025-08-26T22:33:22.910042",
+      "status": "pending",
+      "engine_id": "ENG-001",
+      "aircraft_tail": "B-3238"
+    },
+    {
+      "work_package_id": "WP-ENH-002",
+      "name": "增强测试工作包2",
+      "description": "包含完整资源约束的第2个测试工作包",
+      "priority": "low",
+      "estimated_duration_hours": 82,
+      "deadline": "2025-09-11T22:33:22.910336",
+      "status": "pending",
+      "engine_id": "ENG-002",
+      "aircraft_tail": "B-9824"
+    },
+    {
+      "work_package_id": "WP-ENH-003",
+      "name": "增强测试工作包3",
+      "description": "包含完整资源约束的第3个测试工作包",
+      "priority": "low",
+      "estimated_duration_hours": 85,
+      "deadline": "2025-09-01T22:33:22.910416",
+      "status": "pending",
+      "engine_id": "ENG-003",
+      "aircraft_tail": "B-2991"
+    }
+  ],
+  "jobs": [
+    {
+      "job_id": "WP-ENH-001-JOB-01",
+      "work_package_id": "WP-ENH-001",
+      "name": "任务1",
+      "description": "增强测试工作包1的第1个任务",
+      "base_duration_hours": 3.3258956669862463,
+      "required_qualifications": [
+        "液压",
+        "电气",
+        "控制"
+      ],
+      "required_resources": [
+        {
+          "resource_id": "MAT-009",
+          "resource_type": "material",
+          "quantity": 1,
+          "must_kit": false,
+          "criticality": "high"
+        },
+        {
+          "resource_id": "TOOL-005",
+          "resource_type": "tool",
+          "quantity": 1,
+          "requires_certification": true
+        },
+        {
+          "resource_id": "TOOL-006",
+          "resource_type": "tool",
+          "quantity": 1,
+          "requires_certification": true
+        },
+        {
+          "resource_id": "TOOL-002",
+          "resource_type": "tool",
+          "quantity": 1,
+          "requires_certification": true
+        },
+        {
+          "resource_id": "WS-005",
+          "resource_type": "workspace",
+          "quantity": 1,
+          "required_certifications": [
+            "机械",
+            "液压"
+          ]
+        }
+      ],
+      "predecessor_jobs": [],
+      "constraints": {
+        "max_parallel_resources": 3,
+        "preferred_start_time": null,
+        "must_complete_by": "2025-08-26T22:33:22.910042",
+        "allow_overtime": false
+      },
+      "quality_requirements": {
+        "inspection_required": true,
+        "certification_level": "standard",
+        "documentation_required": false
+      }
+    },
+    {
+      "job_id": "WP-ENH-001-JOB-02",
+      "work_package_id": "WP-ENH-001",
+      "name": "任务2",
+      "description": "增强测试工作包1的第2个任务",
+      "base_duration_hours": 7.21873926015368,
+      "required_qualifications": [
+        "燃油",
+        "液压"
+      ],
+      "required_resources": [
+        {
+          "resource_id": "MAT-010",
+          "resource_type": "material",
+          "quantity": 1,
+          "must_kit": true,
+          "criticality": "low"
+        },
+        {
+          "resource_id": "MAT-009",
+          "resource_type": "material",
+          "quantity": 5,
+          "must_kit": false,
+          "criticality": "high"
+        },
+        {
+          "resource_id": "MAT-005",
+          "resource_type": "material",
+          "quantity": 1,
+          "must_kit": false,
+          "criticality": "medium"
+        },
+        {
+          "resource_id": "TOOL-001",
+          "resource_type": "tool",
+          "quantity": 1,
+          "requires_certification": true
+        },
+        {
+          "resource_id": "TOOL-006",
+          "resource_type": "tool",
+          "quantity": 1,
+          "requires_certification": true
+        },
+        {
+          "resource_id": "WS-005",
+          "resource_type": "workspace",
+          "quantity": 1,
+          "required_certifications": [
+            "机械",
+            "液压"
+          ]
+        }
+      ],
+      "predecessor_jobs": [
+        "WP-ENH-001-JOB-01"
+      ],
+      "constraints": {
+        "max_parallel_resources": 5,
+        "preferred_start_time": null,
+        "must_complete_by": "2025-08-26T22:33:22.910042",
+        "allow_overtime": true
+      },
+      "quality_requirements": {
+        "inspection_required": true,
+        "certification_level": "standard",
+        "documentation_required": false
+      }
+    },
+    {
+      "job_id": "WP-ENH-001-JOB-03",
+      "work_package_id": "WP-ENH-001",
+      "name": "任务3",
+      "description": "增强测试工作包1的第3个任务",
+      "base_duration_hours": 7.645629637802151,
+      "required_qualifications": [
+        "电气",
+        "控制",
+        "液压"
+      ],
+      "required_resources": [
+        {
+          "resource_id": "MAT-008",
+          "resource_type": "material",
+          "quantity": 2,
+          "must_kit": true,
+          "criticality": "medium"
+        },
+        {
+          "resource_id": "MAT-004",
+          "resource_type": "material",
+          "quantity": 5,
+          "must_kit": false,
+          "criticality": "low"
+        },
+        {
+          "resource_id": "TOOL-001",
+          "resource_type": "tool",
+          "quantity": 1,
+          "requires_certification": true
+        },
+        {
+          "resource_id": "WS-005",
+          "resource_type": "workspace",
+          "quantity": 1,
+          "required_certifications": [
+            "机械",
+            "液压"
+          ]
+        }
+      ],
+      "predecessor_jobs": [
+        "WP-ENH-001-JOB-01"
+      ],
+      "constraints": {
+        "max_parallel_resources": 2,
+        "preferred_start_time": null,
+        "must_complete_by": "2025-08-26T22:33:22.910042",
+        "allow_overtime": true
+      },
+      "quality_requirements": {
+        "inspection_required": false,
+        "certification_level": "critical",
+        "documentation_required": false
+      }
+    },
+    {
+      "job_id": "WP-ENH-001-JOB-04",
+      "work_package_id": "WP-ENH-001",
+      "name": "任务4",
+      "description": "增强测试工作包1的第4个任务",
+      "base_duration_hours": 3.8227927780468987,
+      "required_qualifications": [
+        "控制"
+      ],
+      "required_resources": [
+        {
+          "resource_id": "MAT-004",
+          "resource_type": "material",
+          "quantity": 6,
+          "must_kit": false,
+          "criticality": "low"
+        },
+        {
+          "resource_id": "MAT-002",
+          "resource_type": "material",
+          "quantity": 2,
+          "must_kit": false,
+          "criticality": "medium"
+        },
+        {
+          "resource_id": "EQP-001",
+          "resource_type": "equipment",
+          "quantity": 1,
+          "exclusive": true,
+          "setup_time_hours": 0.6449433393218267
+        },
+        {
+          "resource_id": "TOOL-007",
+          "resource_type": "tool",
+          "quantity": 1,
+          "requires_certification": false
+        },
+        {
+          "resource_id": "TOOL-002",
+          "resource_type": "tool",
+          "quantity": 1,
+          "requires_certification": true
+        },
+        {
+          "resource_id": "TOOL-005",
+          "resource_type": "tool",
+          "quantity": 1,
+          "requires_certification": true
+        },
+        {
+          "resource_id": "WS-001",
+          "resource_type": "workspace",
+          "quantity": 1,
+          "required_certifications": [
+            "电气",
+            "机械"
+          ]
+        }
+      ],
+      "predecessor_jobs": [
+        "WP-ENH-001-JOB-02",
+        "WP-ENH-001-JOB-03"
+      ],
+      "constraints": {
+        "max_parallel_resources": 2,
+        "preferred_start_time": null,
+        "must_complete_by": "2025-08-26T22:33:22.910042",
+        "allow_overtime": true
+      },
+      "quality_requirements": {
+        "inspection_required": false,
+        "certification_level": "critical",
+        "documentation_required": false
+      }
+    },
+    {
+      "job_id": "WP-ENH-002-JOB-01",
+      "work_package_id": "WP-ENH-002",
+      "name": "任务1",
+      "description": "增强测试工作包2的第1个任务",
+      "base_duration_hours": 2.082926747917059,
+      "required_qualifications": [
+        "机械"
+      ],
+      "required_resources": [
+        {
+          "resource_id": "MAT-008",
+          "resource_type": "material",
+          "quantity": 6,
+          "must_kit": true,
+          "criticality": "medium"
+        },
+        {
+          "resource_id": "MAT-003",
+          "resource_type": "material",
+          "quantity": 1,
+          "must_kit": false,
+          "criticality": "low"
+        },
+        {
+          "resource_id": "MAT-001",
+          "resource_type": "material",
+          "quantity": 4,
+          "must_kit": false,
+          "criticality": "medium"
+        },
+        {
+          "resource_id": "EQP-001",
+          "resource_type": "equipment",
+          "quantity": 1,
+          "exclusive": true,
+          "setup_time_hours": 1.766039303647231
+        },
+        {
+          "resource_id": "TOOL-004",
+          "resource_type": "tool",
+          "quantity": 1,
+          "requires_certification": true
+        },
+        {
+          "resource_id": "TOOL-002",
+          "resource_type": "tool",
+          "quantity": 1,
+          "requires_certification": true
+        },
+        {
+          "resource_id": "WS-004",
+          "resource_type": "workspace",
+          "quantity": 1,
+          "required_certifications": [
+            "机械",
+            "液压"
+          ]
+        }
+      ],
+      "predecessor_jobs": [
+        "WP-ENH-001-JOB-04"
+      ],
+      "constraints": {
+        "max_parallel_resources": 3,
+        "preferred_start_time": null,
+        "must_complete_by": "2025-09-11T22:33:22.910336",
+        "allow_overtime": false
+      },
+      "quality_requirements": {
+        "inspection_required": true,
+        "certification_level": "enhanced",
+        "documentation_required": false
+      }
+    },
+    {
+      "job_id": "WP-ENH-002-JOB-02",
+      "work_package_id": "WP-ENH-002",
+      "name": "任务2",
+      "description": "增强测试工作包2的第2个任务",
+      "base_duration_hours": 3.4468553393577106,
+      "required_qualifications": [
+        "电气"
+      ],
+      "required_resources": [
+        {
+          "resource_id": "MAT-004",
+          "resource_type": "material",
+          "quantity": 8,
+          "must_kit": false,
+          "criticality": "low"
+        },
+        {
+          "resource_id": "MAT-005",
+          "resource_type": "material",
+          "quantity": 2,
+          "must_kit": false,
+          "criticality": "medium"
+        },
+        {
+          "resource_id": "MAT-001",
+          "resource_type": "material",
+          "quantity": 2,
+          "must_kit": false,
+          "criticality": "medium"
+        },
+        {
+          "resource_id": "EQP-001",
+          "resource_type": "equipment",
+          "quantity": 1,
+          "exclusive": true,
+          "setup_time_hours": 0.7854330290055641
+        },
+        {
+          "resource_id": "TOOL-004",
+          "resource_type": "tool",
+          "quantity": 1,
+          "requires_certification": true
+        },
+        {
+          "resource_id": "TOOL-007",
+          "resource_type": "tool",
+          "quantity": 1,
+          "requires_certification": false
+        },
+        {
+          "resource_id": "TOOL-003",
+          "resource_type": "tool",
+          "quantity": 1,
+          "requires_certification": true
+        },
+        {
+          "resource_id": "WS-003",
+          "resource_type": "workspace",
+          "quantity": 1,
+          "required_certifications": [
+            "电气",
+            "液压"
+          ]
+        }
+      ],
+      "predecessor_jobs": [],
+      "constraints": {
+        "max_parallel_resources": 4,
+        "preferred_start_time": null,
+        "must_complete_by": "2025-09-11T22:33:22.910336",
+        "allow_overtime": true
+      },
+      "quality_requirements": {
+        "inspection_required": false,
+        "certification_level": "critical",
+        "documentation_required": true
+      }
+    },
+    {
+      "job_id": "WP-ENH-002-JOB-03",
+      "work_package_id": "WP-ENH-002",
+      "name": "任务3",
+      "description": "增强测试工作包2的第3个任务",
+      "base_duration_hours": 3.4203052653396826,
+      "required_qualifications": [
+        "液压",
+        "电气",
+        "机械"
+      ],
+      "required_resources": [
+        {
+          "resource_id": "MAT-010",
+          "resource_type": "material",
+          "quantity": 1,
+          "must_kit": true,
+          "criticality": "low"
+        },
+        {
+          "resource_id": "EQP-003",
+          "resource_type": "equipment",
+          "quantity": 1,
+          "exclusive": true,
+          "setup_time_hours": 1.1769006522915704
+        },
+        {
+          "resource_id": "TOOL-003",
+          "resource_type": "tool",
+          "quantity": 1,
+          "requires_certification": true
+        },
+        {
+          "resource_id": "TOOL-001",
+          "resource_type": "tool",
+          "quantity": 1,
+          "requires_certification": true
+        },
+        {
+          "resource_id": "TOOL-002",
+          "resource_type": "tool",
+          "quantity": 1,
+          "requires_certification": true
+        },
+        {
+          "resource_id": "WS-004",
+          "resource_type": "workspace",
+          "quantity": 1,
+          "required_certifications": [
+            "机械",
+            "液压"
+          ]
+        }
+      ],
+      "predecessor_jobs": [
+        "WP-ENH-002-JOB-01",
+        "WP-ENH-002-JOB-02"
+      ],
+      "constraints": {
+        "max_parallel_resources": 4,
+        "preferred_start_time": null,
+        "must_complete_by": "2025-09-11T22:33:22.910336",
+        "allow_overtime": true
+      },
+      "quality_requirements": {
+        "inspection_required": false,
+        "certification_level": "critical",
+        "documentation_required": true
+      }
+    },
+    {
+      "job_id": "WP-ENH-002-JOB-04",
+      "work_package_id": "WP-ENH-002",
+      "name": "任务4",
+      "description": "增强测试工作包2的第4个任务",
+      "base_duration_hours": 2.6671518749979137,
+      "required_qualifications": [
+        "控制"
+      ],
+      "required_resources": [
+        {
+          "resource_id": "MAT-007",
+          "resource_type": "material",
+          "quantity": 2,
+          "must_kit": false,
+          "criticality": "high"
+        },
+        {
+          "resource_id": "MAT-004",
+          "resource_type": "material",
+          "quantity": 7,
+          "must_kit": false,
+          "criticality": "low"
+        },
+        {
+          "resource_id": "MAT-002",
+          "resource_type": "material",
+          "quantity": 1,
+          "must_kit": false,
+          "criticality": "medium"
+        },
+        {
+          "resource_id": "TOOL-007",
+          "resource_type": "tool",
+          "quantity": 1,
+          "requires_certification": false
+        },
+        {
+          "resource_id": "WS-005",
+          "resource_type": "workspace",
+          "quantity": 1,
+          "required_certifications": [
+            "机械",
+            "液压"
+          ]
+        }
+      ],
+      "predecessor_jobs": [
+        "WP-ENH-002-JOB-03"
+      ],
+      "constraints": {
+        "max_parallel_resources": 3,
+        "preferred_start_time": null,
+        "must_complete_by": "2025-09-11T22:33:22.910336",
+        "allow_overtime": false
+      },
+      "quality_requirements": {
+        "inspection_required": true,
+        "certification_level": "standard",
+        "documentation_required": true
+      }
+    },
+    {
+      "job_id": "WP-ENH-002-JOB-05",
+      "work_package_id": "WP-ENH-002",
+      "name": "任务5",
+      "description": "增强测试工作包2的第5个任务",
+      "base_duration_hours": 1.9915641447906554,
+      "required_qualifications": [
+        "液压",
+        "电气"
+      ],
+      "required_resources": [
+        {
+          "resource_id": "MAT-008",
+          "resource_type": "material",
+          "quantity": 9,
+          "must_kit": true,
+          "criticality": "medium"
+        },
+        {
+          "resource_id": "EQP-004",
+          "resource_type": "equipment",
+          "quantity": 1,
+          "exclusive": true,
+          "setup_time_hours": 1.0624242808408808
+        },
+        {
+          "resource_id": "TOOL-007",
+          "resource_type": "tool",
+          "quantity": 1,
+          "requires_certification": false
+        },
+        {
+          "resource_id": "TOOL-001",
+          "resource_type": "tool",
+          "quantity": 1,
+          "requires_certification": true
+        },
+        {
+          "resource_id": "WS-004",
+          "resource_type": "workspace",
+          "quantity": 1,
+          "required_certifications": [
+            "机械",
+            "液压"
+          ]
+        }
+      ],
+      "predecessor_jobs": [
+        "WP-ENH-002-JOB-04"
+      ],
+      "constraints": {
+        "max_parallel_resources": 5,
+        "preferred_start_time": null,
+        "must_complete_by": "2025-09-11T22:33:22.910336",
+        "allow_overtime": false
+      },
+      "quality_requirements": {
+        "inspection_required": true,
+        "certification_level": "enhanced",
+        "documentation_required": true
+      }
+    },
+    {
+      "job_id": "WP-ENH-003-JOB-01",
+      "work_package_id": "WP-ENH-003",
+      "name": "任务1",
+      "description": "增强测试工作包3的第1个任务",
+      "base_duration_hours": 4.570830163916051,
+      "required_qualifications": [
+        "液压",
+        "电气",
+        "控制"
+      ],
+      "required_resources": [
+        {
+          "resource_id": "MAT-005",
+          "resource_type": "material",
+          "quantity": 3,
+          "must_kit": false,
+          "criticality": "medium"
+        },
+        {
+          "resource_id": "TOOL-002",
+          "resource_type": "tool",
+          "quantity": 1,
+          "requires_certification": true
+        },
+        {
+          "resource_id": "WS-001",
+          "resource_type": "workspace",
+          "quantity": 1,
+          "required_certifications": [
+            "电气",
+            "机械"
+          ]
+        }
+      ],
+      "predecessor_jobs": [
+        "WP-ENH-002-JOB-05"
+      ],
+      "constraints": {
+        "max_parallel_resources": 5,
+        "preferred_start_time": null,
+        "must_complete_by": "2025-09-01T22:33:22.910416",
+        "allow_overtime": true
+      },
+      "quality_requirements": {
+        "inspection_required": false,
+        "certification_level": "critical",
+        "documentation_required": true
+      }
+    },
+    {
+      "job_id": "WP-ENH-003-JOB-02",
+      "work_package_id": "WP-ENH-003",
+      "name": "任务2",
+      "description": "增强测试工作包3的第2个任务",
+      "base_duration_hours": 3.1972892378828712,
+      "required_qualifications": [
+        "燃油",
+        "液压",
+        "控制"
+      ],
+      "required_resources": [
+        {
+          "resource_id": "MAT-004",
+          "resource_type": "material",
+          "quantity": 1,
+          "must_kit": false,
+          "criticality": "low"
+        },
+        {
+          "resource_id": "MAT-002",
+          "resource_type": "material",
+          "quantity": 1,
+          "must_kit": false,
+          "criticality": "medium"
+        },
+        {
+          "resource_id": "MAT-001",
+          "resource_type": "material",
+          "quantity": 5,
+          "must_kit": false,
+          "criticality": "medium"
+        },
+        {
+          "resource_id": "TOOL-005",
+          "resource_type": "tool",
+          "quantity": 1,
+          "requires_certification": true
+        },
+        {
+          "resource_id": "WS-003",
+          "resource_type": "workspace",
+          "quantity": 1,
+          "required_certifications": [
+            "电气",
+            "液压"
+          ]
+        }
+      ],
+      "predecessor_jobs": [
+        "WP-ENH-003-JOB-01"
+      ],
+      "constraints": {
+        "max_parallel_resources": 4,
+        "preferred_start_time": null,
+        "must_complete_by": "2025-09-01T22:33:22.910416",
+        "allow_overtime": true
+      },
+      "quality_requirements": {
+        "inspection_required": false,
+        "certification_level": "standard",
+        "documentation_required": true
+      }
+    }
+  ],
+  "resources": [
+    {
+      "resource_id": "MAT-001",
+      "resource_type": "material",
+      "name": "滤芯",
+      "description": "用于发动机维修的滤芯",
+      "part_number": "PN-89037",
+      "total_quantity": 18,
+      "available_quantity": 7,
+      "required_quantity": 1,
+      "must_kit": false,
+      "allow_partial": false,
+      "eta": "2025-08-15T22:33:22.910548",
+      "lead_time_days": 6,
+      "storage_location": "货架-B-08",
+      "qec_shelf_slot": "C-01-11",
+      "unit_cost": 2305.06807279518,
+      "criticality": "medium",
+      "is_ready": true,
+      "is_kitted": false,
+      "current_status": "in_transit"
+    },
+    {
+      "resource_id": "MAT-002",
+      "resource_type": "material",
+      "name": "涡轮叶片",
+      "description": "用于发动机维修的涡轮叶片",
+      "part_number": "PN-86707",
+      "total_quantity": 43,
+      "available_quantity": 2,
+      "required_quantity": 2,
+      "must_kit": false,
+      "allow_partial": false,
+      "eta": "2025-08-25T22:33:22.910704",
+      "lead_time_days": 2,
+      "storage_location": "货架-A-11",
+      "qec_shelf_slot": "B-09-07",
+      "unit_cost": 478.5089871641619,
+      "criticality": "medium",
+      "is_ready": false,
+      "is_kitted": false,
+      "current_status": "available"
+    },
+    {
+      "resource_id": "MAT-003",
+      "resource_type": "material",
+      "name": "压气机叶片",
+      "description": "用于发动机维修的压气机叶片",
+      "part_number": "PN-43246",
+      "total_quantity": 17,
+      "available_quantity": 7,
+      "required_quantity": 3,
+      "must_kit": false,
+      "allow_partial": false,
+      "eta": "2025-08-16T22:33:22.910858",
+      "lead_time_days": 29,
+      "storage_location": "货架-B-09",
+      "qec_shelf_slot": "C-07-15",
+      "unit_cost": 4507.6137253259,
+      "criticality": "low",
+      "is_ready": false,
+      "is_kitted": true,
+      "current_status": "in_transit"
+    },
+    {
+      "resource_id": "MAT-004",
+      "resource_type": "material",
+      "name": "燃油喷嘴",
+      "description": "用于发动机维修的燃油喷嘴",
+      "part_number": "PN-24169",
+      "total_quantity": 45,
+      "available_quantity": 9,
+      "required_quantity": 2,
+      "must_kit": false,
+      "allow_partial": false,
+      "eta": "2025-08-15T22:33:22.910969",
+      "lead_time_days": 17,
+      "storage_location": "货架-A-08",
+      "qec_shelf_slot": "B-07-14",
+      "unit_cost": 2667.273256047628,
+      "criticality": "low",
+      "is_ready": false,
+      "is_kitted": false,
+      "current_status": "in_transit"
+    },
+    {
+      "resource_id": "MAT-005",
+      "resource_type": "material",
+      "name": "轴承",
+      "description": "用于发动机维修的轴承",
+      "part_number": "PN-10008",
+      "total_quantity": 41,
+      "available_quantity": 4,
+      "required_quantity": 1,
+      "must_kit": false,
+      "allow_partial": true,
+      "eta": "2025-08-19T22:33:22.911079",
+      "lead_time_days": 11,
+      "storage_location": "货架-C-04",
+      "qec_shelf_slot": "B-08-18",
+      "unit_cost": 2895.570903634836,
+      "criticality": "medium",
+      "is_ready": true,
+      "is_kitted": true,
+      "current_status": "in_transit"
+    },
+    {
+      "resource_id": "MAT-006",
+      "resource_type": "material",
+      "name": "发动机密封圈",
+      "description": "用于发动机维修的发动机密封圈",
+      "part_number": "PN-54702",
+      "total_quantity": 29,
+      "available_quantity": 8,
+      "required_quantity": 1,
+      "must_kit": false,
+      "allow_partial": true,
+      "eta": "2025-08-27T22:33:22.911197",
+      "lead_time_days": 4,
+      "storage_location": "货架-B-20",
+      "qec_shelf_slot": "B-07-04",
+      "unit_cost": 2857.0156928274296,
+      "criticality": "medium",
+      "is_ready": false,
+      "is_kitted": true,
+      "current_status": "available"
+    },
+    {
+      "resource_id": "MAT-007",
+      "resource_type": "material",
+      "name": "燃油喷嘴",
+      "description": "用于发动机维修的燃油喷嘴",
+      "part_number": "PN-90127",
+      "total_quantity": 11,
+      "available_quantity": 2,
+      "required_quantity": 2,
+      "must_kit": false,
+      "allow_partial": true,
+      "eta": "2025-08-20T22:33:22.911334",
+      "lead_time_days": 17,
+      "storage_location": "货架-A-09",
+      "qec_shelf_slot": "B-01-17",
+      "unit_cost": 257.1568663085378,
+      "criticality": "high",
+      "is_ready": false,
+      "is_kitted": true,
+      "current_status": "in_transit"
+    },
+    {
+      "resource_id": "MAT-008",
+      "resource_type": "material",
+      "name": "齿轮",
+      "description": "用于发动机维修的齿轮",
+      "part_number": "PN-76518",
+      "total_quantity": 25,
+      "available_quantity": 10,
+      "required_quantity": 2,
+      "must_kit": true,
+      "allow_partial": true,
+      "eta": "2025-08-21T22:33:22.911400",
+      "lead_time_days": 16,
+      "storage_location": "货架-C-02",
+      "qec_shelf_slot": "A-02-04",
+      "unit_cost": 1792.2063452918792,
+      "criticality": "medium",
+      "is_ready": true,
+      "is_kitted": true,
+      "current_status": "reserved"
+    },
+    {
+      "resource_id": "MAT-009",
+      "resource_type": "material",
+      "name": "燃油喷嘴",
+      "description": "用于发动机维修的燃油喷嘴",
+      "part_number": "PN-76593",
+      "total_quantity": 20,
+      "available_quantity": 6,
+      "required_quantity": 5,
+      "must_kit": false,
+      "allow_partial": true,
+      "eta": "2025-08-26T22:33:22.911459",
+      "lead_time_days": 2,
+      "storage_location": "货架-A-12",
+      "qec_shelf_slot": "A-01-15",
+      "unit_cost": 1509.9238753629213,
+      "criticality": "high",
+      "is_ready": false,
+      "is_kitted": false,
+      "current_status": "maintenance"
+    },
+    {
+      "resource_id": "MAT-010",
+      "resource_type": "material",
+      "name": "传感器",
+      "description": "用于发动机维修的传感器",
+      "part_number": "PN-51235",
+      "total_quantity": 14,
+      "available_quantity": 1,
+      "required_quantity": 4,
+      "must_kit": true,
+      "allow_partial": true,
+      "eta": "2025-08-21T22:33:22.911516",
+      "lead_time_days": 9,
+      "storage_location": "货架-B-11",
+      "qec_shelf_slot": "B-05-17",
+      "unit_cost": 1158.3210837573376,
+      "criticality": "low",
+      "is_ready": true,
+      "is_kitted": false,
+      "current_status": "reserved"
+    },
+    {
+      "resource_id": "EQP-001",
+      "resource_type": "equipment",
+      "name": "发动机吊车",
+      "description": "发动机吊车 - 5T",
+      "model": "Model-509",
+      "serial_number": "SN-889418",
+      "manufacturer": "厂商A",
+      "total_quantity": 1,
+      "available_quantity": 1,
+      "capacity_limits": {
+        "max_load": "5T",
+        "max_concurrent_jobs": 1
+      },
+      "is_exclusive": true,
+      "exclusive_group": "EQP_GROUP_CRANE",
+      "last_maintenance": "2025-06-05T22:33:22.911626",
+      "next_maintenance": "2025-09-20T22:33:22.911663",
+      "maintenance_interval_hours": 375,
+      "availability_schedule": {
+        "start_time": "06:00",
+        "end_time": "22:00",
+        "working_days": [
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday",
+          "saturday"
+        ]
+      },
+      "hourly_cost": 853.0717016906249,
+      "setup_cost": 284.965908240197,
+      "location": "车间A",
+      "area": "工位区域4",
+      "current_status": "busy"
+    },
+    {
+      "resource_id": "EQP-002",
+      "resource_type": "equipment",
+      "name": "平衡机",
+      "description": "平衡机 - 动平衡",
+      "model": "Model-439",
+      "serial_number": "SN-405387",
+      "manufacturer": "厂商C",
+      "total_quantity": 1,
+      "available_quantity": 1,
+      "capacity_limits": {
+        "max_load": "动平衡",
+        "max_concurrent_jobs": 1
+      },
+      "is_exclusive": true,
+      "exclusive_group": "EQP_GROUP_BALANCING",
+      "last_maintenance": "2025-06-10T22:33:22.911760",
+      "next_maintenance": "2025-12-14T22:33:22.911780",
+      "maintenance_interval_hours": 907,
+      "availability_schedule": {
+        "start_time": "06:00",
+        "end_time": "22:00",
+        "working_days": [
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday",
+          "saturday"
+        ]
+      },
+      "hourly_cost": 762.8085309461289,
+      "setup_cost": 425.44090579573674,
+      "location": "车间C",
+      "area": "工位区域1",
+      "current_status": "busy"
+    },
+    {
+      "resource_id": "EQP-003",
+      "resource_type": "equipment",
+      "name": "清洗设备",
+      "description": "清洗设备 - 超声波",
+      "model": "Model-207",
+      "serial_number": "SN-800910",
+      "manufacturer": "厂商A",
+      "total_quantity": 1,
+      "available_quantity": 0,
+      "capacity_limits": {
+        "max_load": "超声波",
+        "max_concurrent_jobs": 1
+      },
+      "is_exclusive": true,
+      "exclusive_group": "EQP_GROUP_CLEANING",
+      "last_maintenance": "2025-05-28T22:33:22.911847",
+      "next_maintenance": "2026-01-22T22:33:22.911871",
+      "maintenance_interval_hours": 732,
+      "availability_schedule": {
+        "start_time": "06:00",
+        "end_time": "22:00",
+        "working_days": [
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday",
+          "saturday"
+        ]
+      },
+      "hourly_cost": 291.33175518627735,
+      "setup_cost": 322.26387001102023,
+      "location": "车间C",
+      "area": "工位区域5",
+      "current_status": "busy"
+    },
+    {
+      "resource_id": "EQP-004",
+      "resource_type": "equipment",
+      "name": "烘干炉",
+      "description": "烘干炉 - 200°C",
+      "model": "Model-560",
+      "serial_number": "SN-797116",
+      "manufacturer": "厂商B",
+      "total_quantity": 1,
+      "available_quantity": 0,
+      "capacity_limits": {
+        "max_load": "200°C",
+        "max_concurrent_jobs": 1
+      },
+      "is_exclusive": true,
+      "exclusive_group": "EQP_GROUP_HEATING",
+      "last_maintenance": "2025-06-29T22:33:22.911960",
+      "next_maintenance": "2025-10-31T22:33:22.911999",
+      "maintenance_interval_hours": 447,
+      "availability_schedule": {
+        "start_time": "06:00",
+        "end_time": "22:00",
+        "working_days": [
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday",
+          "saturday"
+        ]
+      },
+      "hourly_cost": 968.7538340299343,
+      "setup_cost": 115.13842566851996,
+      "location": "车间A",
+      "area": "工位区域5",
+      "current_status": "maintenance"
+    },
+    {
+      "resource_id": "EQP-005",
+      "resource_type": "equipment",
+      "name": "液压测试台",
+      "description": "液压测试台 - 300bar",
+      "model": "Model-901",
+      "serial_number": "SN-441896",
+      "manufacturer": "厂商B",
+      "total_quantity": 1,
+      "available_quantity": 1,
+      "capacity_limits": {
+        "max_load": "300bar",
+        "max_concurrent_jobs": 1
+      },
+      "is_exclusive": true,
+      "exclusive_group": "EQP_GROUP_TEST_EQUIPMENT",
+      "last_maintenance": "2025-05-31T22:33:22.912102",
+      "next_maintenance": "2025-10-08T22:33:22.912127",
+      "maintenance_interval_hours": 823,
+      "availability_schedule": {
+        "start_time": "06:00",
+        "end_time": "22:00",
+        "working_days": [
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday",
+          "saturday"
+        ]
+      },
+      "hourly_cost": 720.7041462038674,
+      "setup_cost": 255.6519425819068,
+      "location": "车间C",
+      "area": "工位区域4",
+      "current_status": "maintenance"
+    },
+    {
+      "resource_id": "TOOL-001",
+      "resource_type": "tool",
+      "name": "专用拆装工具",
+      "description": "专业维修用专用拆装工具",
+      "model": "T-538",
+      "total_quantity": 3,
+      "available_quantity": 1,
+      "calibration_due": "2025-12-05T22:33:22.912207",
+      "calibration_interval_days": 117,
+      "max_concurrent_users": 1,
+      "requires_certification": true,
+      "hourly_cost": 73.56738222352973,
+      "storage_location": "工具柜-A-17",
+      "current_status": "repair"
+    },
+    {
+      "resource_id": "TOOL-002",
+      "resource_type": "tool",
+      "name": "专用拆装工具",
+      "description": "专业维修用专用拆装工具",
+      "model": "T-286",
+      "total_quantity": 1,
+      "available_quantity": 2,
+      "calibration_due": "2026-04-20T22:33:22.912356",
+      "calibration_interval_days": 283,
+      "max_concurrent_users": 1,
+      "requires_certification": true,
+      "hourly_cost": 66.55011247422001,
+      "storage_location": "工具柜-B-18",
+      "current_status": "in_use"
+    },
+    {
+      "resource_id": "TOOL-003",
+      "resource_type": "tool",
+      "name": "扭力扳手",
+      "description": "专业维修用扭力扳手",
+      "model": "T-191",
+      "total_quantity": 5,
+      "available_quantity": 2,
+      "calibration_due": "2026-05-26T22:33:22.912414",
+      "calibration_interval_days": 172,
+      "max_concurrent_users": 3,
+      "requires_certification": true,
+      "hourly_cost": 60.94524008384875,
+      "storage_location": "工具柜-B-14",
+      "current_status": "in_use"
+    },
+    {
+      "resource_id": "TOOL-004",
+      "resource_type": "tool",
+      "name": "内窥镜",
+      "description": "专业维修用内窥镜",
+      "model": "T-354",
+      "total_quantity": 2,
+      "available_quantity": 2,
+      "calibration_due": "2026-07-18T22:33:22.912461",
+      "calibration_interval_days": 334,
+      "max_concurrent_users": 1,
+      "requires_certification": true,
+      "hourly_cost": 28.375047241063207,
+      "storage_location": "工具柜-A-15",
+      "current_status": "available"
+    },
+    {
+      "resource_id": "TOOL-005",
+      "resource_type": "tool",
+      "name": "振动仪",
+      "description": "专业维修用振动仪",
+      "model": "T-804",
+      "total_quantity": 5,
+      "available_quantity": 1,
+      "calibration_due": "2025-11-14T22:33:22.912526",
+      "calibration_interval_days": 176,
+      "max_concurrent_users": 3,
+      "requires_certification": true,
+      "hourly_cost": 47.410616951571726,
+      "storage_location": "工具柜-C-13",
+      "current_status": "calibration"
+    },
+    {
+      "resource_id": "TOOL-006",
+      "resource_type": "tool",
+      "name": "振动仪",
+      "description": "专业维修用振动仪",
+      "model": "T-886",
+      "total_quantity": 4,
+      "available_quantity": 3,
+      "calibration_due": "2026-07-30T22:33:22.912586",
+      "calibration_interval_days": 92,
+      "max_concurrent_users": 2,
+      "requires_certification": true,
+      "hourly_cost": 75.96076622851673,
+      "storage_location": "工具柜-B-13",
+      "current_status": "repair"
+    },
+    {
+      "resource_id": "TOOL-007",
+      "resource_type": "tool",
+      "name": "测厚仪",
+      "description": "专业维修用测厚仪",
+      "model": "T-377",
+      "total_quantity": 2,
+      "available_quantity": 1,
+      "calibration_due": "2025-12-19T22:33:22.912664",
+      "calibration_interval_days": 243,
+      "max_concurrent_users": 3,
+      "requires_certification": false,
+      "hourly_cost": 70.36562928076218,
+      "storage_location": "工具柜-C-6",
+      "current_status": "calibration"
+    },
+    {
+      "resource_id": "TOOL-008",
+      "resource_type": "tool",
+      "name": "温度计",
+      "description": "专业维修用温度计",
+      "model": "T-747",
+      "total_quantity": 3,
+      "available_quantity": 1,
+      "calibration_due": "2025-11-22T22:33:22.912741",
+      "calibration_interval_days": 208,
+      "max_concurrent_users": 1,
+      "requires_certification": false,
+      "hourly_cost": 35.80415658300282,
+      "storage_location": "工具柜-A-10",
+      "current_status": "calibration"
+    },
+    {
+      "resource_id": "WS-001",
+      "resource_type": "workspace",
+      "name": "拆解工位",
+      "description": "拆解工位 - 最大容量2个任务",
+      "total_quantity": 2,
+      "available_quantity": 1,
+      "max_concurrent_jobs": 2,
+      "location": "拆解区",
+      "area": "拆解区",
+      "equipped_tools": [
+        "TOOL-005",
+        "TOOL-005",
+        "TOOL-007"
+      ],
+      "required_certifications": [
+        "电气",
+        "机械"
+      ],
+      "availability_schedule": {
+        "start_time": "07:00",
+        "end_time": "19:00",
+        "working_days": [
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday"
+        ]
+      },
+      "hourly_cost": 90.4318853085726,
+      "current_status": "occupied"
+    },
+    {
+      "resource_id": "WS-002",
+      "resource_type": "workspace",
+      "name": "清洗工位",
+      "description": "清洗工位 - 最大容量1个任务",
+      "total_quantity": 1,
+      "available_quantity": 1,
+      "max_concurrent_jobs": 1,
+      "location": "清洗区",
+      "area": "清洗区",
+      "equipped_tools": [
+        "TOOL-002",
+        "TOOL-007",
+        "TOOL-008"
+      ],
+      "required_certifications": [
+        "液压"
+      ],
+      "availability_schedule": {
+        "start_time": "07:00",
+        "end_time": "19:00",
+        "working_days": [
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday"
+        ]
+      },
+      "hourly_cost": 138.25512403875894,
+      "current_status": "maintenance"
+    },
+    {
+      "resource_id": "WS-003",
+      "resource_type": "workspace",
+      "name": "检查工位",
+      "description": "检查工位 - 最大容量3个任务",
+      "total_quantity": 3,
+      "available_quantity": 0,
+      "max_concurrent_jobs": 3,
+      "location": "检查区",
+      "area": "检查区",
+      "equipped_tools": [
+        "TOOL-002"
+      ],
+      "required_certifications": [
+        "电气",
+        "液压"
+      ],
+      "availability_schedule": {
+        "start_time": "07:00",
+        "end_time": "19:00",
+        "working_days": [
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday"
+        ]
+      },
+      "hourly_cost": 59.923323435101445,
+      "current_status": "available"
+    },
+    {
+      "resource_id": "WS-004",
+      "resource_type": "workspace",
+      "name": "装配工位",
+      "description": "装配工位 - 最大容量2个任务",
+      "total_quantity": 2,
+      "available_quantity": 0,
+      "max_concurrent_jobs": 2,
+      "location": "装配区",
+      "area": "装配区",
+      "equipped_tools": [
+        "TOOL-002",
+        "TOOL-005"
+      ],
+      "required_certifications": [
+        "机械",
+        "液压"
+      ],
+      "availability_schedule": {
+        "start_time": "07:00",
+        "end_time": "19:00",
+        "working_days": [
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday"
+        ]
+      },
+      "hourly_cost": 141.1184767145412,
+      "current_status": "occupied"
+    },
+    {
+      "resource_id": "WS-005",
+      "resource_type": "workspace",
+      "name": "测试工位",
+      "description": "测试工位 - 最大容量1个任务",
+      "total_quantity": 1,
+      "available_quantity": 1,
+      "max_concurrent_jobs": 1,
+      "location": "测试区",
+      "area": "测试区",
+      "equipped_tools": [
+        "TOOL-003",
+        "TOOL-004",
+        "TOOL-005"
+      ],
+      "required_certifications": [
+        "机械",
+        "液压"
+      ],
+      "availability_schedule": {
+        "start_time": "07:00",
+        "end_time": "19:00",
+        "working_days": [
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday"
+        ]
+      },
+      "hourly_cost": 167.8971057824999,
+      "current_status": "occupied"
+    },
+    {
+      "resource_id": "TECH-001",
+      "resource_type": "human",
+      "employee_id": "EMP-001",
+      "name": "张师傅",
+      "qualifications": [
+        "控制",
+        "机械",
+        "液压",
+        "燃油"
+      ],
+      "skill_levels": {
+        "电气": 2,
+        "机械": 3,
+        "液压": 4,
+        "燃油": 4,
+        "控制": 5
+      },
+      "experience_years": 19.588992798879854,
+      "performance_rating": 4.506770020196284,
+      "availability": {
+        "start_time": "08:00",
+        "end_time": "18:00",
+        "working_days": [
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday"
+        ]
+      },
+      "hourly_rate": 116.25578266243379,
+      "max_overtime_hours": 4.021980235532839,
+      "current_status": "on_leave"
+    },
+    {
+      "resource_id": "TECH-002",
+      "resource_type": "human",
+      "employee_id": "EMP-002",
+      "name": "李技师",
+      "qualifications": [
+        "燃油",
+        "液压"
+      ],
+      "skill_levels": {
+        "电气": 2,
+        "机械": 3,
+        "液压": 4,
+        "燃油": 3,
+        "控制": 3
+      },
+      "experience_years": 10.557490551659273,
+      "performance_rating": 3.392441399695121,
+      "availability": {
+        "start_time": "08:00",
+        "end_time": "18:00",
+        "working_days": [
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday"
+        ]
+      },
+      "hourly_rate": 74.57899316682227,
+      "max_overtime_hours": 4.212632092533013,
+      "current_status": "on_leave"
+    },
+    {
+      "resource_id": "TECH-003",
+      "resource_type": "human",
+      "employee_id": "EMP-003",
+      "name": "王工程师",
+      "qualifications": [
+        "液压",
+        "电气"
+      ],
+      "skill_levels": {
+        "电气": 1,
+        "机械": 4,
+        "液压": 2,
+        "燃油": 3,
+        "控制": 3
+      },
+      "experience_years": 17.103133264600913,
+      "performance_rating": 3.8190402171935673,
+      "availability": {
+        "start_time": "08:00",
+        "end_time": "18:00",
+        "working_days": [
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday"
+        ]
+      },
+      "hourly_rate": 84.10870559165723,
+      "max_overtime_hours": 4.498627739327814,
+      "current_status": "busy"
+    },
+    {
+      "resource_id": "TECH-004",
+      "resource_type": "human",
+      "employee_id": "EMP-004",
+      "name": "刘专家",
+      "qualifications": [
+        "液压",
+        "燃油"
+      ],
+      "skill_levels": {
+        "电气": 1,
+        "机械": 5,
+        "液压": 4,
+        "燃油": 3,
+        "控制": 1
+      },
+      "experience_years": 14.45380660126032,
+      "performance_rating": 4.858999049167025,
+      "availability": {
+        "start_time": "08:00",
+        "end_time": "18:00",
+        "working_days": [
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday"
+        ]
+      },
+      "hourly_rate": 86.64033094611565,
+      "max_overtime_hours": 5.767074168152981,
+      "current_status": "on_leave"
+    },
+    {
+      "resource_id": "TECH-005",
+      "resource_type": "human",
+      "employee_id": "EMP-005",
+      "name": "陈主管",
+      "qualifications": [
+        "液压",
+        "控制",
+        "电气"
+      ],
+      "skill_levels": {
+        "电气": 5,
+        "机械": 4,
+        "液压": 5,
+        "燃油": 3,
+        "控制": 3
+      },
+      "experience_years": 14.76053115641883,
+      "performance_rating": 3.0706630998039026,
+      "availability": {
+        "start_time": "08:00",
+        "end_time": "18:00",
+        "working_days": [
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday"
+        ]
+      },
+      "hourly_rate": 103.4638077921839,
+      "max_overtime_hours": 2.6241872673018682,
+      "current_status": "available"
+    }
+  ],
+  "materials": [
+    {
+      "resource_id": "MAT-001",
+      "resource_type": "material",
+      "name": "滤芯",
+      "description": "用于发动机维修的滤芯",
+      "part_number": "PN-89037",
+      "total_quantity": 18,
+      "available_quantity": 7,
+      "required_quantity": 1,
+      "must_kit": false,
+      "allow_partial": false,
+      "eta": "2025-08-15T22:33:22.910548",
+      "lead_time_days": 6,
+      "storage_location": "货架-B-08",
+      "qec_shelf_slot": "C-01-11",
+      "unit_cost": 2305.06807279518,
+      "criticality": "medium",
+      "is_ready": true,
+      "is_kitted": false,
+      "current_status": "in_transit"
+    },
+    {
+      "resource_id": "MAT-002",
+      "resource_type": "material",
+      "name": "涡轮叶片",
+      "description": "用于发动机维修的涡轮叶片",
+      "part_number": "PN-86707",
+      "total_quantity": 43,
+      "available_quantity": 2,
+      "required_quantity": 2,
+      "must_kit": false,
+      "allow_partial": false,
+      "eta": "2025-08-25T22:33:22.910704",
+      "lead_time_days": 2,
+      "storage_location": "货架-A-11",
+      "qec_shelf_slot": "B-09-07",
+      "unit_cost": 478.5089871641619,
+      "criticality": "medium",
+      "is_ready": false,
+      "is_kitted": false,
+      "current_status": "available"
+    },
+    {
+      "resource_id": "MAT-003",
+      "resource_type": "material",
+      "name": "压气机叶片",
+      "description": "用于发动机维修的压气机叶片",
+      "part_number": "PN-43246",
+      "total_quantity": 17,
+      "available_quantity": 7,
+      "required_quantity": 3,
+      "must_kit": false,
+      "allow_partial": false,
+      "eta": "2025-08-16T22:33:22.910858",
+      "lead_time_days": 29,
+      "storage_location": "货架-B-09",
+      "qec_shelf_slot": "C-07-15",
+      "unit_cost": 4507.6137253259,
+      "criticality": "low",
+      "is_ready": false,
+      "is_kitted": true,
+      "current_status": "in_transit"
+    },
+    {
+      "resource_id": "MAT-004",
+      "resource_type": "material",
+      "name": "燃油喷嘴",
+      "description": "用于发动机维修的燃油喷嘴",
+      "part_number": "PN-24169",
+      "total_quantity": 45,
+      "available_quantity": 9,
+      "required_quantity": 2,
+      "must_kit": false,
+      "allow_partial": false,
+      "eta": "2025-08-15T22:33:22.910969",
+      "lead_time_days": 17,
+      "storage_location": "货架-A-08",
+      "qec_shelf_slot": "B-07-14",
+      "unit_cost": 2667.273256047628,
+      "criticality": "low",
+      "is_ready": false,
+      "is_kitted": false,
+      "current_status": "in_transit"
+    },
+    {
+      "resource_id": "MAT-005",
+      "resource_type": "material",
+      "name": "轴承",
+      "description": "用于发动机维修的轴承",
+      "part_number": "PN-10008",
+      "total_quantity": 41,
+      "available_quantity": 4,
+      "required_quantity": 1,
+      "must_kit": false,
+      "allow_partial": true,
+      "eta": "2025-08-19T22:33:22.911079",
+      "lead_time_days": 11,
+      "storage_location": "货架-C-04",
+      "qec_shelf_slot": "B-08-18",
+      "unit_cost": 2895.570903634836,
+      "criticality": "medium",
+      "is_ready": true,
+      "is_kitted": true,
+      "current_status": "in_transit"
+    },
+    {
+      "resource_id": "MAT-006",
+      "resource_type": "material",
+      "name": "发动机密封圈",
+      "description": "用于发动机维修的发动机密封圈",
+      "part_number": "PN-54702",
+      "total_quantity": 29,
+      "available_quantity": 8,
+      "required_quantity": 1,
+      "must_kit": false,
+      "allow_partial": true,
+      "eta": "2025-08-27T22:33:22.911197",
+      "lead_time_days": 4,
+      "storage_location": "货架-B-20",
+      "qec_shelf_slot": "B-07-04",
+      "unit_cost": 2857.0156928274296,
+      "criticality": "medium",
+      "is_ready": false,
+      "is_kitted": true,
+      "current_status": "available"
+    },
+    {
+      "resource_id": "MAT-007",
+      "resource_type": "material",
+      "name": "燃油喷嘴",
+      "description": "用于发动机维修的燃油喷嘴",
+      "part_number": "PN-90127",
+      "total_quantity": 11,
+      "available_quantity": 2,
+      "required_quantity": 2,
+      "must_kit": false,
+      "allow_partial": true,
+      "eta": "2025-08-20T22:33:22.911334",
+      "lead_time_days": 17,
+      "storage_location": "货架-A-09",
+      "qec_shelf_slot": "B-01-17",
+      "unit_cost": 257.1568663085378,
+      "criticality": "high",
+      "is_ready": false,
+      "is_kitted": true,
+      "current_status": "in_transit"
+    },
+    {
+      "resource_id": "MAT-008",
+      "resource_type": "material",
+      "name": "齿轮",
+      "description": "用于发动机维修的齿轮",
+      "part_number": "PN-76518",
+      "total_quantity": 25,
+      "available_quantity": 10,
+      "required_quantity": 2,
+      "must_kit": true,
+      "allow_partial": true,
+      "eta": "2025-08-21T22:33:22.911400",
+      "lead_time_days": 16,
+      "storage_location": "货架-C-02",
+      "qec_shelf_slot": "A-02-04",
+      "unit_cost": 1792.2063452918792,
+      "criticality": "medium",
+      "is_ready": true,
+      "is_kitted": true,
+      "current_status": "reserved"
+    },
+    {
+      "resource_id": "MAT-009",
+      "resource_type": "material",
+      "name": "燃油喷嘴",
+      "description": "用于发动机维修的燃油喷嘴",
+      "part_number": "PN-76593",
+      "total_quantity": 20,
+      "available_quantity": 6,
+      "required_quantity": 5,
+      "must_kit": false,
+      "allow_partial": true,
+      "eta": "2025-08-26T22:33:22.911459",
+      "lead_time_days": 2,
+      "storage_location": "货架-A-12",
+      "qec_shelf_slot": "A-01-15",
+      "unit_cost": 1509.9238753629213,
+      "criticality": "high",
+      "is_ready": false,
+      "is_kitted": false,
+      "current_status": "maintenance"
+    },
+    {
+      "resource_id": "MAT-010",
+      "resource_type": "material",
+      "name": "传感器",
+      "description": "用于发动机维修的传感器",
+      "part_number": "PN-51235",
+      "total_quantity": 14,
+      "available_quantity": 1,
+      "required_quantity": 4,
+      "must_kit": true,
+      "allow_partial": true,
+      "eta": "2025-08-21T22:33:22.911516",
+      "lead_time_days": 9,
+      "storage_location": "货架-B-11",
+      "qec_shelf_slot": "B-05-17",
+      "unit_cost": 1158.3210837573376,
+      "criticality": "low",
+      "is_ready": true,
+      "is_kitted": false,
+      "current_status": "reserved"
+    }
+  ],
+  "equipment": [
+    {
+      "resource_id": "EQP-001",
+      "resource_type": "equipment",
+      "name": "发动机吊车",
+      "description": "发动机吊车 - 5T",
+      "model": "Model-509",
+      "serial_number": "SN-889418",
+      "manufacturer": "厂商A",
+      "total_quantity": 1,
+      "available_quantity": 1,
+      "capacity_limits": {
+        "max_load": "5T",
+        "max_concurrent_jobs": 1
+      },
+      "is_exclusive": true,
+      "exclusive_group": "EQP_GROUP_CRANE",
+      "last_maintenance": "2025-06-05T22:33:22.911626",
+      "next_maintenance": "2025-09-20T22:33:22.911663",
+      "maintenance_interval_hours": 375,
+      "availability_schedule": {
+        "start_time": "06:00",
+        "end_time": "22:00",
+        "working_days": [
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday",
+          "saturday"
+        ]
+      },
+      "hourly_cost": 853.0717016906249,
+      "setup_cost": 284.965908240197,
+      "location": "车间A",
+      "area": "工位区域4",
+      "current_status": "busy"
+    },
+    {
+      "resource_id": "EQP-002",
+      "resource_type": "equipment",
+      "name": "平衡机",
+      "description": "平衡机 - 动平衡",
+      "model": "Model-439",
+      "serial_number": "SN-405387",
+      "manufacturer": "厂商C",
+      "total_quantity": 1,
+      "available_quantity": 1,
+      "capacity_limits": {
+        "max_load": "动平衡",
+        "max_concurrent_jobs": 1
+      },
+      "is_exclusive": true,
+      "exclusive_group": "EQP_GROUP_BALANCING",
+      "last_maintenance": "2025-06-10T22:33:22.911760",
+      "next_maintenance": "2025-12-14T22:33:22.911780",
+      "maintenance_interval_hours": 907,
+      "availability_schedule": {
+        "start_time": "06:00",
+        "end_time": "22:00",
+        "working_days": [
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday",
+          "saturday"
+        ]
+      },
+      "hourly_cost": 762.8085309461289,
+      "setup_cost": 425.44090579573674,
+      "location": "车间C",
+      "area": "工位区域1",
+      "current_status": "busy"
+    },
+    {
+      "resource_id": "EQP-003",
+      "resource_type": "equipment",
+      "name": "清洗设备",
+      "description": "清洗设备 - 超声波",
+      "model": "Model-207",
+      "serial_number": "SN-800910",
+      "manufacturer": "厂商A",
+      "total_quantity": 1,
+      "available_quantity": 0,
+      "capacity_limits": {
+        "max_load": "超声波",
+        "max_concurrent_jobs": 1
+      },
+      "is_exclusive": true,
+      "exclusive_group": "EQP_GROUP_CLEANING",
+      "last_maintenance": "2025-05-28T22:33:22.911847",
+      "next_maintenance": "2026-01-22T22:33:22.911871",
+      "maintenance_interval_hours": 732,
+      "availability_schedule": {
+        "start_time": "06:00",
+        "end_time": "22:00",
+        "working_days": [
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday",
+          "saturday"
+        ]
+      },
+      "hourly_cost": 291.33175518627735,
+      "setup_cost": 322.26387001102023,
+      "location": "车间C",
+      "area": "工位区域5",
+      "current_status": "busy"
+    },
+    {
+      "resource_id": "EQP-004",
+      "resource_type": "equipment",
+      "name": "烘干炉",
+      "description": "烘干炉 - 200°C",
+      "model": "Model-560",
+      "serial_number": "SN-797116",
+      "manufacturer": "厂商B",
+      "total_quantity": 1,
+      "available_quantity": 0,
+      "capacity_limits": {
+        "max_load": "200°C",
+        "max_concurrent_jobs": 1
+      },
+      "is_exclusive": true,
+      "exclusive_group": "EQP_GROUP_HEATING",
+      "last_maintenance": "2025-06-29T22:33:22.911960",
+      "next_maintenance": "2025-10-31T22:33:22.911999",
+      "maintenance_interval_hours": 447,
+      "availability_schedule": {
+        "start_time": "06:00",
+        "end_time": "22:00",
+        "working_days": [
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday",
+          "saturday"
+        ]
+      },
+      "hourly_cost": 968.7538340299343,
+      "setup_cost": 115.13842566851996,
+      "location": "车间A",
+      "area": "工位区域5",
+      "current_status": "maintenance"
+    },
+    {
+      "resource_id": "EQP-005",
+      "resource_type": "equipment",
+      "name": "液压测试台",
+      "description": "液压测试台 - 300bar",
+      "model": "Model-901",
+      "serial_number": "SN-441896",
+      "manufacturer": "厂商B",
+      "total_quantity": 1,
+      "available_quantity": 1,
+      "capacity_limits": {
+        "max_load": "300bar",
+        "max_concurrent_jobs": 1
+      },
+      "is_exclusive": true,
+      "exclusive_group": "EQP_GROUP_TEST_EQUIPMENT",
+      "last_maintenance": "2025-05-31T22:33:22.912102",
+      "next_maintenance": "2025-10-08T22:33:22.912127",
+      "maintenance_interval_hours": 823,
+      "availability_schedule": {
+        "start_time": "06:00",
+        "end_time": "22:00",
+        "working_days": [
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday",
+          "saturday"
+        ]
+      },
+      "hourly_cost": 720.7041462038674,
+      "setup_cost": 255.6519425819068,
+      "location": "车间C",
+      "area": "工位区域4",
+      "current_status": "maintenance"
+    }
+  ],
+  "tools": [
+    {
+      "resource_id": "TOOL-001",
+      "resource_type": "tool",
+      "name": "专用拆装工具",
+      "description": "专业维修用专用拆装工具",
+      "model": "T-538",
+      "total_quantity": 3,
+      "available_quantity": 1,
+      "calibration_due": "2025-12-05T22:33:22.912207",
+      "calibration_interval_days": 117,
+      "max_concurrent_users": 1,
+      "requires_certification": true,
+      "hourly_cost": 73.56738222352973,
+      "storage_location": "工具柜-A-17",
+      "current_status": "repair"
+    },
+    {
+      "resource_id": "TOOL-002",
+      "resource_type": "tool",
+      "name": "专用拆装工具",
+      "description": "专业维修用专用拆装工具",
+      "model": "T-286",
+      "total_quantity": 1,
+      "available_quantity": 2,
+      "calibration_due": "2026-04-20T22:33:22.912356",
+      "calibration_interval_days": 283,
+      "max_concurrent_users": 1,
+      "requires_certification": true,
+      "hourly_cost": 66.55011247422001,
+      "storage_location": "工具柜-B-18",
+      "current_status": "in_use"
+    },
+    {
+      "resource_id": "TOOL-003",
+      "resource_type": "tool",
+      "name": "扭力扳手",
+      "description": "专业维修用扭力扳手",
+      "model": "T-191",
+      "total_quantity": 5,
+      "available_quantity": 2,
+      "calibration_due": "2026-05-26T22:33:22.912414",
+      "calibration_interval_days": 172,
+      "max_concurrent_users": 3,
+      "requires_certification": true,
+      "hourly_cost": 60.94524008384875,
+      "storage_location": "工具柜-B-14",
+      "current_status": "in_use"
+    },
+    {
+      "resource_id": "TOOL-004",
+      "resource_type": "tool",
+      "name": "内窥镜",
+      "description": "专业维修用内窥镜",
+      "model": "T-354",
+      "total_quantity": 2,
+      "available_quantity": 2,
+      "calibration_due": "2026-07-18T22:33:22.912461",
+      "calibration_interval_days": 334,
+      "max_concurrent_users": 1,
+      "requires_certification": true,
+      "hourly_cost": 28.375047241063207,
+      "storage_location": "工具柜-A-15",
+      "current_status": "available"
+    },
+    {
+      "resource_id": "TOOL-005",
+      "resource_type": "tool",
+      "name": "振动仪",
+      "description": "专业维修用振动仪",
+      "model": "T-804",
+      "total_quantity": 5,
+      "available_quantity": 1,
+      "calibration_due": "2025-11-14T22:33:22.912526",
+      "calibration_interval_days": 176,
+      "max_concurrent_users": 3,
+      "requires_certification": true,
+      "hourly_cost": 47.410616951571726,
+      "storage_location": "工具柜-C-13",
+      "current_status": "calibration"
+    },
+    {
+      "resource_id": "TOOL-006",
+      "resource_type": "tool",
+      "name": "振动仪",
+      "description": "专业维修用振动仪",
+      "model": "T-886",
+      "total_quantity": 4,
+      "available_quantity": 3,
+      "calibration_due": "2026-07-30T22:33:22.912586",
+      "calibration_interval_days": 92,
+      "max_concurrent_users": 2,
+      "requires_certification": true,
+      "hourly_cost": 75.96076622851673,
+      "storage_location": "工具柜-B-13",
+      "current_status": "repair"
+    },
+    {
+      "resource_id": "TOOL-007",
+      "resource_type": "tool",
+      "name": "测厚仪",
+      "description": "专业维修用测厚仪",
+      "model": "T-377",
+      "total_quantity": 2,
+      "available_quantity": 1,
+      "calibration_due": "2025-12-19T22:33:22.912664",
+      "calibration_interval_days": 243,
+      "max_concurrent_users": 3,
+      "requires_certification": false,
+      "hourly_cost": 70.36562928076218,
+      "storage_location": "工具柜-C-6",
+      "current_status": "calibration"
+    },
+    {
+      "resource_id": "TOOL-008",
+      "resource_type": "tool",
+      "name": "温度计",
+      "description": "专业维修用温度计",
+      "model": "T-747",
+      "total_quantity": 3,
+      "available_quantity": 1,
+      "calibration_due": "2025-11-22T22:33:22.912741",
+      "calibration_interval_days": 208,
+      "max_concurrent_users": 1,
+      "requires_certification": false,
+      "hourly_cost": 35.80415658300282,
+      "storage_location": "工具柜-A-10",
+      "current_status": "calibration"
+    }
+  ],
+  "workspaces": [
+    {
+      "resource_id": "WS-001",
+      "resource_type": "workspace",
+      "name": "拆解工位",
+      "description": "拆解工位 - 最大容量2个任务",
+      "total_quantity": 2,
+      "available_quantity": 1,
+      "max_concurrent_jobs": 2,
+      "location": "拆解区",
+      "area": "拆解区",
+      "equipped_tools": [
+        "TOOL-005",
+        "TOOL-005",
+        "TOOL-007"
+      ],
+      "required_certifications": [
+        "电气",
+        "机械"
+      ],
+      "availability_schedule": {
+        "start_time": "07:00",
+        "end_time": "19:00",
+        "working_days": [
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday"
+        ]
+      },
+      "hourly_cost": 90.4318853085726,
+      "current_status": "occupied"
+    },
+    {
+      "resource_id": "WS-002",
+      "resource_type": "workspace",
+      "name": "清洗工位",
+      "description": "清洗工位 - 最大容量1个任务",
+      "total_quantity": 1,
+      "available_quantity": 1,
+      "max_concurrent_jobs": 1,
+      "location": "清洗区",
+      "area": "清洗区",
+      "equipped_tools": [
+        "TOOL-002",
+        "TOOL-007",
+        "TOOL-008"
+      ],
+      "required_certifications": [
+        "液压"
+      ],
+      "availability_schedule": {
+        "start_time": "07:00",
+        "end_time": "19:00",
+        "working_days": [
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday"
+        ]
+      },
+      "hourly_cost": 138.25512403875894,
+      "current_status": "maintenance"
+    },
+    {
+      "resource_id": "WS-003",
+      "resource_type": "workspace",
+      "name": "检查工位",
+      "description": "检查工位 - 最大容量3个任务",
+      "total_quantity": 3,
+      "available_quantity": 0,
+      "max_concurrent_jobs": 3,
+      "location": "检查区",
+      "area": "检查区",
+      "equipped_tools": [
+        "TOOL-002"
+      ],
+      "required_certifications": [
+        "电气",
+        "液压"
+      ],
+      "availability_schedule": {
+        "start_time": "07:00",
+        "end_time": "19:00",
+        "working_days": [
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday"
+        ]
+      },
+      "hourly_cost": 59.923323435101445,
+      "current_status": "available"
+    },
+    {
+      "resource_id": "WS-004",
+      "resource_type": "workspace",
+      "name": "装配工位",
+      "description": "装配工位 - 最大容量2个任务",
+      "total_quantity": 2,
+      "available_quantity": 0,
+      "max_concurrent_jobs": 2,
+      "location": "装配区",
+      "area": "装配区",
+      "equipped_tools": [
+        "TOOL-002",
+        "TOOL-005"
+      ],
+      "required_certifications": [
+        "机械",
+        "液压"
+      ],
+      "availability_schedule": {
+        "start_time": "07:00",
+        "end_time": "19:00",
+        "working_days": [
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday"
+        ]
+      },
+      "hourly_cost": 141.1184767145412,
+      "current_status": "occupied"
+    },
+    {
+      "resource_id": "WS-005",
+      "resource_type": "workspace",
+      "name": "测试工位",
+      "description": "测试工位 - 最大容量1个任务",
+      "total_quantity": 1,
+      "available_quantity": 1,
+      "max_concurrent_jobs": 1,
+      "location": "测试区",
+      "area": "测试区",
+      "equipped_tools": [
+        "TOOL-003",
+        "TOOL-004",
+        "TOOL-005"
+      ],
+      "required_certifications": [
+        "机械",
+        "液压"
+      ],
+      "availability_schedule": {
+        "start_time": "07:00",
+        "end_time": "19:00",
+        "working_days": [
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday"
+        ]
+      },
+      "hourly_cost": 167.8971057824999,
+      "current_status": "occupied"
+    }
+  ],
+  "humans": [
+    {
+      "resource_id": "TECH-001",
+      "resource_type": "human",
+      "employee_id": "EMP-001",
+      "name": "张师傅",
+      "qualifications": [
+        "控制",
+        "机械",
+        "液压",
+        "燃油"
+      ],
+      "skill_levels": {
+        "电气": 2,
+        "机械": 3,
+        "液压": 4,
+        "燃油": 4,
+        "控制": 5
+      },
+      "experience_years": 19.588992798879854,
+      "performance_rating": 4.506770020196284,
+      "availability": {
+        "start_time": "08:00",
+        "end_time": "18:00",
+        "working_days": [
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday"
+        ]
+      },
+      "hourly_rate": 116.25578266243379,
+      "max_overtime_hours": 4.021980235532839,
+      "current_status": "on_leave"
+    },
+    {
+      "resource_id": "TECH-002",
+      "resource_type": "human",
+      "employee_id": "EMP-002",
+      "name": "李技师",
+      "qualifications": [
+        "燃油",
+        "液压"
+      ],
+      "skill_levels": {
+        "电气": 2,
+        "机械": 3,
+        "液压": 4,
+        "燃油": 3,
+        "控制": 3
+      },
+      "experience_years": 10.557490551659273,
+      "performance_rating": 3.392441399695121,
+      "availability": {
+        "start_time": "08:00",
+        "end_time": "18:00",
+        "working_days": [
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday"
+        ]
+      },
+      "hourly_rate": 74.57899316682227,
+      "max_overtime_hours": 4.212632092533013,
+      "current_status": "on_leave"
+    },
+    {
+      "resource_id": "TECH-003",
+      "resource_type": "human",
+      "employee_id": "EMP-003",
+      "name": "王工程师",
+      "qualifications": [
+        "液压",
+        "电气"
+      ],
+      "skill_levels": {
+        "电气": 1,
+        "机械": 4,
+        "液压": 2,
+        "燃油": 3,
+        "控制": 3
+      },
+      "experience_years": 17.103133264600913,
+      "performance_rating": 3.8190402171935673,
+      "availability": {
+        "start_time": "08:00",
+        "end_time": "18:00",
+        "working_days": [
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday"
+        ]
+      },
+      "hourly_rate": 84.10870559165723,
+      "max_overtime_hours": 4.498627739327814,
+      "current_status": "busy"
+    },
+    {
+      "resource_id": "TECH-004",
+      "resource_type": "human",
+      "employee_id": "EMP-004",
+      "name": "刘专家",
+      "qualifications": [
+        "液压",
+        "燃油"
+      ],
+      "skill_levels": {
+        "电气": 1,
+        "机械": 5,
+        "液压": 4,
+        "燃油": 3,
+        "控制": 1
+      },
+      "experience_years": 14.45380660126032,
+      "performance_rating": 4.858999049167025,
+      "availability": {
+        "start_time": "08:00",
+        "end_time": "18:00",
+        "working_days": [
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday"
+        ]
+      },
+      "hourly_rate": 86.64033094611565,
+      "max_overtime_hours": 5.767074168152981,
+      "current_status": "on_leave"
+    },
+    {
+      "resource_id": "TECH-005",
+      "resource_type": "human",
+      "employee_id": "EMP-005",
+      "name": "陈主管",
+      "qualifications": [
+        "液压",
+        "控制",
+        "电气"
+      ],
+      "skill_levels": {
+        "电气": 5,
+        "机械": 4,
+        "液压": 5,
+        "燃油": 3,
+        "控制": 3
+      },
+      "experience_years": 14.76053115641883,
+      "performance_rating": 3.0706630998039026,
+      "availability": {
+        "start_time": "08:00",
+        "end_time": "18:00",
+        "working_days": [
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday"
+        ]
+      },
+      "hourly_rate": 103.4638077921839,
+      "max_overtime_hours": 2.6241872673018682,
+      "current_status": "available"
+    }
+  ],
+  "schedule_request": {
+    "request_id": "REQ-ENH-20250817-223322",
+    "work_packages": [
+      {
+        "work_package_id": "WP-ENH-001",
+        "name": "增强测试工作包1",
+        "description": "包含完整资源约束的第1个测试工作包",
+        "priority": "low",
+        "estimated_duration_hours": 55,
+        "deadline": "2025-08-26T22:33:22.910042",
+        "status": "pending",
+        "engine_id": "ENG-001",
+        "aircraft_tail": "B-3238"
+      },
+      {
+        "work_package_id": "WP-ENH-002",
+        "name": "增强测试工作包2",
+        "description": "包含完整资源约束的第2个测试工作包",
+        "priority": "low",
+        "estimated_duration_hours": 82,
+        "deadline": "2025-09-11T22:33:22.910336",
+        "status": "pending",
+        "engine_id": "ENG-002",
+        "aircraft_tail": "B-9824"
+      },
+      {
+        "work_package_id": "WP-ENH-003",
+        "name": "增强测试工作包3",
+        "description": "包含完整资源约束的第3个测试工作包",
+        "priority": "low",
+        "estimated_duration_hours": 85,
+        "deadline": "2025-09-01T22:33:22.910416",
+        "status": "pending",
+        "engine_id": "ENG-003",
+        "aircraft_tail": "B-2991"
+      }
+    ],
+    "jobs": [
+      {
+        "job_id": "WP-ENH-001-JOB-01",
+        "work_package_id": "WP-ENH-001",
+        "name": "任务1",
+        "description": "增强测试工作包1的第1个任务",
+        "base_duration_hours": 3.3258956669862463,
+        "required_qualifications": [
+          "液压",
+          "电气",
+          "控制"
+        ],
+        "required_resources": [
+          {
+            "resource_id": "MAT-009",
+            "resource_type": "material",
+            "quantity": 1,
+            "must_kit": false,
+            "criticality": "high"
+          },
+          {
+            "resource_id": "TOOL-005",
+            "resource_type": "tool",
+            "quantity": 1,
+            "requires_certification": true
+          },
+          {
+            "resource_id": "TOOL-006",
+            "resource_type": "tool",
+            "quantity": 1,
+            "requires_certification": true
+          },
+          {
+            "resource_id": "TOOL-002",
+            "resource_type": "tool",
+            "quantity": 1,
+            "requires_certification": true
+          },
+          {
+            "resource_id": "WS-005",
+            "resource_type": "workspace",
+            "quantity": 1,
+            "required_certifications": [
+              "机械",
+              "液压"
+            ]
+          }
+        ],
+        "predecessor_jobs": [],
+        "constraints": {
+          "max_parallel_resources": 3,
+          "preferred_start_time": null,
+          "must_complete_by": "2025-08-26T22:33:22.910042",
+          "allow_overtime": false
+        },
+        "quality_requirements": {
+          "inspection_required": true,
+          "certification_level": "standard",
+          "documentation_required": false
+        }
+      },
+      {
+        "job_id": "WP-ENH-001-JOB-02",
+        "work_package_id": "WP-ENH-001",
+        "name": "任务2",
+        "description": "增强测试工作包1的第2个任务",
+        "base_duration_hours": 7.21873926015368,
+        "required_qualifications": [
+          "燃油",
+          "液压"
+        ],
+        "required_resources": [
+          {
+            "resource_id": "MAT-010",
+            "resource_type": "material",
+            "quantity": 1,
+            "must_kit": true,
+            "criticality": "low"
+          },
+          {
+            "resource_id": "MAT-009",
+            "resource_type": "material",
+            "quantity": 5,
+            "must_kit": false,
+            "criticality": "high"
+          },
+          {
+            "resource_id": "MAT-005",
+            "resource_type": "material",
+            "quantity": 1,
+            "must_kit": false,
+            "criticality": "medium"
+          },
+          {
+            "resource_id": "TOOL-001",
+            "resource_type": "tool",
+            "quantity": 1,
+            "requires_certification": true
+          },
+          {
+            "resource_id": "TOOL-006",
+            "resource_type": "tool",
+            "quantity": 1,
+            "requires_certification": true
+          },
+          {
+            "resource_id": "WS-005",
+            "resource_type": "workspace",
+            "quantity": 1,
+            "required_certifications": [
+              "机械",
+              "液压"
+            ]
+          }
+        ],
+        "predecessor_jobs": [
+          "WP-ENH-001-JOB-01"
+        ],
+        "constraints": {
+          "max_parallel_resources": 5,
+          "preferred_start_time": null,
+          "must_complete_by": "2025-08-26T22:33:22.910042",
+          "allow_overtime": true
+        },
+        "quality_requirements": {
+          "inspection_required": true,
+          "certification_level": "standard",
+          "documentation_required": false
+        }
+      },
+      {
+        "job_id": "WP-ENH-001-JOB-03",
+        "work_package_id": "WP-ENH-001",
+        "name": "任务3",
+        "description": "增强测试工作包1的第3个任务",
+        "base_duration_hours": 7.645629637802151,
+        "required_qualifications": [
+          "电气",
+          "控制",
+          "液压"
+        ],
+        "required_resources": [
+          {
+            "resource_id": "MAT-008",
+            "resource_type": "material",
+            "quantity": 2,
+            "must_kit": true,
+            "criticality": "medium"
+          },
+          {
+            "resource_id": "MAT-004",
+            "resource_type": "material",
+            "quantity": 5,
+            "must_kit": false,
+            "criticality": "low"
+          },
+          {
+            "resource_id": "TOOL-001",
+            "resource_type": "tool",
+            "quantity": 1,
+            "requires_certification": true
+          },
+          {
+            "resource_id": "WS-005",
+            "resource_type": "workspace",
+            "quantity": 1,
+            "required_certifications": [
+              "机械",
+              "液压"
+            ]
+          }
+        ],
+        "predecessor_jobs": [
+          "WP-ENH-001-JOB-01"
+        ],
+        "constraints": {
+          "max_parallel_resources": 2,
+          "preferred_start_time": null,
+          "must_complete_by": "2025-08-26T22:33:22.910042",
+          "allow_overtime": true
+        },
+        "quality_requirements": {
+          "inspection_required": false,
+          "certification_level": "critical",
+          "documentation_required": false
+        }
+      },
+      {
+        "job_id": "WP-ENH-001-JOB-04",
+        "work_package_id": "WP-ENH-001",
+        "name": "任务4",
+        "description": "增强测试工作包1的第4个任务",
+        "base_duration_hours": 3.8227927780468987,
+        "required_qualifications": [
+          "控制"
+        ],
+        "required_resources": [
+          {
+            "resource_id": "MAT-004",
+            "resource_type": "material",
+            "quantity": 6,
+            "must_kit": false,
+            "criticality": "low"
+          },
+          {
+            "resource_id": "MAT-002",
+            "resource_type": "material",
+            "quantity": 2,
+            "must_kit": false,
+            "criticality": "medium"
+          },
+          {
+            "resource_id": "EQP-001",
+            "resource_type": "equipment",
+            "quantity": 1,
+            "exclusive": true,
+            "setup_time_hours": 0.6449433393218267
+          },
+          {
+            "resource_id": "TOOL-007",
+            "resource_type": "tool",
+            "quantity": 1,
+            "requires_certification": false
+          },
+          {
+            "resource_id": "TOOL-002",
+            "resource_type": "tool",
+            "quantity": 1,
+            "requires_certification": true
+          },
+          {
+            "resource_id": "TOOL-005",
+            "resource_type": "tool",
+            "quantity": 1,
+            "requires_certification": true
+          },
+          {
+            "resource_id": "WS-001",
+            "resource_type": "workspace",
+            "quantity": 1,
+            "required_certifications": [
+              "电气",
+              "机械"
+            ]
+          }
+        ],
+        "predecessor_jobs": [
+          "WP-ENH-001-JOB-02",
+          "WP-ENH-001-JOB-03"
+        ],
+        "constraints": {
+          "max_parallel_resources": 2,
+          "preferred_start_time": null,
+          "must_complete_by": "2025-08-26T22:33:22.910042",
+          "allow_overtime": true
+        },
+        "quality_requirements": {
+          "inspection_required": false,
+          "certification_level": "critical",
+          "documentation_required": false
+        }
+      },
+      {
+        "job_id": "WP-ENH-002-JOB-01",
+        "work_package_id": "WP-ENH-002",
+        "name": "任务1",
+        "description": "增强测试工作包2的第1个任务",
+        "base_duration_hours": 2.082926747917059,
+        "required_qualifications": [
+          "机械"
+        ],
+        "required_resources": [
+          {
+            "resource_id": "MAT-008",
+            "resource_type": "material",
+            "quantity": 6,
+            "must_kit": true,
+            "criticality": "medium"
+          },
+          {
+            "resource_id": "MAT-003",
+            "resource_type": "material",
+            "quantity": 1,
+            "must_kit": false,
+            "criticality": "low"
+          },
+          {
+            "resource_id": "MAT-001",
+            "resource_type": "material",
+            "quantity": 4,
+            "must_kit": false,
+            "criticality": "medium"
+          },
+          {
+            "resource_id": "EQP-001",
+            "resource_type": "equipment",
+            "quantity": 1,
+            "exclusive": true,
+            "setup_time_hours": 1.766039303647231
+          },
+          {
+            "resource_id": "TOOL-004",
+            "resource_type": "tool",
+            "quantity": 1,
+            "requires_certification": true
+          },
+          {
+            "resource_id": "TOOL-002",
+            "resource_type": "tool",
+            "quantity": 1,
+            "requires_certification": true
+          },
+          {
+            "resource_id": "WS-004",
+            "resource_type": "workspace",
+            "quantity": 1,
+            "required_certifications": [
+              "机械",
+              "液压"
+            ]
+          }
+        ],
+        "predecessor_jobs": [
+          "WP-ENH-001-JOB-04"
+        ],
+        "constraints": {
+          "max_parallel_resources": 3,
+          "preferred_start_time": null,
+          "must_complete_by": "2025-09-11T22:33:22.910336",
+          "allow_overtime": false
+        },
+        "quality_requirements": {
+          "inspection_required": true,
+          "certification_level": "enhanced",
+          "documentation_required": false
+        }
+      },
+      {
+        "job_id": "WP-ENH-002-JOB-02",
+        "work_package_id": "WP-ENH-002",
+        "name": "任务2",
+        "description": "增强测试工作包2的第2个任务",
+        "base_duration_hours": 3.4468553393577106,
+        "required_qualifications": [
+          "电气"
+        ],
+        "required_resources": [
+          {
+            "resource_id": "MAT-004",
+            "resource_type": "material",
+            "quantity": 8,
+            "must_kit": false,
+            "criticality": "low"
+          },
+          {
+            "resource_id": "MAT-005",
+            "resource_type": "material",
+            "quantity": 2,
+            "must_kit": false,
+            "criticality": "medium"
+          },
+          {
+            "resource_id": "MAT-001",
+            "resource_type": "material",
+            "quantity": 2,
+            "must_kit": false,
+            "criticality": "medium"
+          },
+          {
+            "resource_id": "EQP-001",
+            "resource_type": "equipment",
+            "quantity": 1,
+            "exclusive": true,
+            "setup_time_hours": 0.7854330290055641
+          },
+          {
+            "resource_id": "TOOL-004",
+            "resource_type": "tool",
+            "quantity": 1,
+            "requires_certification": true
+          },
+          {
+            "resource_id": "TOOL-007",
+            "resource_type": "tool",
+            "quantity": 1,
+            "requires_certification": false
+          },
+          {
+            "resource_id": "TOOL-003",
+            "resource_type": "tool",
+            "quantity": 1,
+            "requires_certification": true
+          },
+          {
+            "resource_id": "WS-003",
+            "resource_type": "workspace",
+            "quantity": 1,
+            "required_certifications": [
+              "电气",
+              "液压"
+            ]
+          }
+        ],
+        "predecessor_jobs": [],
+        "constraints": {
+          "max_parallel_resources": 4,
+          "preferred_start_time": null,
+          "must_complete_by": "2025-09-11T22:33:22.910336",
+          "allow_overtime": true
+        },
+        "quality_requirements": {
+          "inspection_required": false,
+          "certification_level": "critical",
+          "documentation_required": true
+        }
+      },
+      {
+        "job_id": "WP-ENH-002-JOB-03",
+        "work_package_id": "WP-ENH-002",
+        "name": "任务3",
+        "description": "增强测试工作包2的第3个任务",
+        "base_duration_hours": 3.4203052653396826,
+        "required_qualifications": [
+          "液压",
+          "电气",
+          "机械"
+        ],
+        "required_resources": [
+          {
+            "resource_id": "MAT-010",
+            "resource_type": "material",
+            "quantity": 1,
+            "must_kit": true,
+            "criticality": "low"
+          },
+          {
+            "resource_id": "EQP-003",
+            "resource_type": "equipment",
+            "quantity": 1,
+            "exclusive": true,
+            "setup_time_hours": 1.1769006522915704
+          },
+          {
+            "resource_id": "TOOL-003",
+            "resource_type": "tool",
+            "quantity": 1,
+            "requires_certification": true
+          },
+          {
+            "resource_id": "TOOL-001",
+            "resource_type": "tool",
+            "quantity": 1,
+            "requires_certification": true
+          },
+          {
+            "resource_id": "TOOL-002",
+            "resource_type": "tool",
+            "quantity": 1,
+            "requires_certification": true
+          },
+          {
+            "resource_id": "WS-004",
+            "resource_type": "workspace",
+            "quantity": 1,
+            "required_certifications": [
+              "机械",
+              "液压"
+            ]
+          }
+        ],
+        "predecessor_jobs": [
+          "WP-ENH-002-JOB-01",
+          "WP-ENH-002-JOB-02"
+        ],
+        "constraints": {
+          "max_parallel_resources": 4,
+          "preferred_start_time": null,
+          "must_complete_by": "2025-09-11T22:33:22.910336",
+          "allow_overtime": true
+        },
+        "quality_requirements": {
+          "inspection_required": false,
+          "certification_level": "critical",
+          "documentation_required": true
+        }
+      },
+      {
+        "job_id": "WP-ENH-002-JOB-04",
+        "work_package_id": "WP-ENH-002",
+        "name": "任务4",
+        "description": "增强测试工作包2的第4个任务",
+        "base_duration_hours": 2.6671518749979137,
+        "required_qualifications": [
+          "控制"
+        ],
+        "required_resources": [
+          {
+            "resource_id": "MAT-007",
+            "resource_type": "material",
+            "quantity": 2,
+            "must_kit": false,
+            "criticality": "high"
+          },
+          {
+            "resource_id": "MAT-004",
+            "resource_type": "material",
+            "quantity": 7,
+            "must_kit": false,
+            "criticality": "low"
+          },
+          {
+            "resource_id": "MAT-002",
+            "resource_type": "material",
+            "quantity": 1,
+            "must_kit": false,
+            "criticality": "medium"
+          },
+          {
+            "resource_id": "TOOL-007",
+            "resource_type": "tool",
+            "quantity": 1,
+            "requires_certification": false
+          },
+          {
+            "resource_id": "WS-005",
+            "resource_type": "workspace",
+            "quantity": 1,
+            "required_certifications": [
+              "机械",
+              "液压"
+            ]
+          }
+        ],
+        "predecessor_jobs": [
+          "WP-ENH-002-JOB-03"
+        ],
+        "constraints": {
+          "max_parallel_resources": 3,
+          "preferred_start_time": null,
+          "must_complete_by": "2025-09-11T22:33:22.910336",
+          "allow_overtime": false
+        },
+        "quality_requirements": {
+          "inspection_required": true,
+          "certification_level": "standard",
+          "documentation_required": true
+        }
+      },
+      {
+        "job_id": "WP-ENH-002-JOB-05",
+        "work_package_id": "WP-ENH-002",
+        "name": "任务5",
+        "description": "增强测试工作包2的第5个任务",
+        "base_duration_hours": 1.9915641447906554,
+        "required_qualifications": [
+          "液压",
+          "电气"
+        ],
+        "required_resources": [
+          {
+            "resource_id": "MAT-008",
+            "resource_type": "material",
+            "quantity": 9,
+            "must_kit": true,
+            "criticality": "medium"
+          },
+          {
+            "resource_id": "EQP-004",
+            "resource_type": "equipment",
+            "quantity": 1,
+            "exclusive": true,
+            "setup_time_hours": 1.0624242808408808
+          },
+          {
+            "resource_id": "TOOL-007",
+            "resource_type": "tool",
+            "quantity": 1,
+            "requires_certification": false
+          },
+          {
+            "resource_id": "TOOL-001",
+            "resource_type": "tool",
+            "quantity": 1,
+            "requires_certification": true
+          },
+          {
+            "resource_id": "WS-004",
+            "resource_type": "workspace",
+            "quantity": 1,
+            "required_certifications": [
+              "机械",
+              "液压"
+            ]
+          }
+        ],
+        "predecessor_jobs": [
+          "WP-ENH-002-JOB-04"
+        ],
+        "constraints": {
+          "max_parallel_resources": 5,
+          "preferred_start_time": null,
+          "must_complete_by": "2025-09-11T22:33:22.910336",
+          "allow_overtime": false
+        },
+        "quality_requirements": {
+          "inspection_required": true,
+          "certification_level": "enhanced",
+          "documentation_required": true
+        }
+      },
+      {
+        "job_id": "WP-ENH-003-JOB-01",
+        "work_package_id": "WP-ENH-003",
+        "name": "任务1",
+        "description": "增强测试工作包3的第1个任务",
+        "base_duration_hours": 4.570830163916051,
+        "required_qualifications": [
+          "液压",
+          "电气",
+          "控制"
+        ],
+        "required_resources": [
+          {
+            "resource_id": "MAT-005",
+            "resource_type": "material",
+            "quantity": 3,
+            "must_kit": false,
+            "criticality": "medium"
+          },
+          {
+            "resource_id": "TOOL-002",
+            "resource_type": "tool",
+            "quantity": 1,
+            "requires_certification": true
+          },
+          {
+            "resource_id": "WS-001",
+            "resource_type": "workspace",
+            "quantity": 1,
+            "required_certifications": [
+              "电气",
+              "机械"
+            ]
+          }
+        ],
+        "predecessor_jobs": [
+          "WP-ENH-002-JOB-05"
+        ],
+        "constraints": {
+          "max_parallel_resources": 5,
+          "preferred_start_time": null,
+          "must_complete_by": "2025-09-01T22:33:22.910416",
+          "allow_overtime": true
+        },
+        "quality_requirements": {
+          "inspection_required": false,
+          "certification_level": "critical",
+          "documentation_required": true
+        }
+      },
+      {
+        "job_id": "WP-ENH-003-JOB-02",
+        "work_package_id": "WP-ENH-003",
+        "name": "任务2",
+        "description": "增强测试工作包3的第2个任务",
+        "base_duration_hours": 3.1972892378828712,
+        "required_qualifications": [
+          "燃油",
+          "液压",
+          "控制"
+        ],
+        "required_resources": [
+          {
+            "resource_id": "MAT-004",
+            "resource_type": "material",
+            "quantity": 1,
+            "must_kit": false,
+            "criticality": "low"
+          },
+          {
+            "resource_id": "MAT-002",
+            "resource_type": "material",
+            "quantity": 1,
+            "must_kit": false,
+            "criticality": "medium"
+          },
+          {
+            "resource_id": "MAT-001",
+            "resource_type": "material",
+            "quantity": 5,
+            "must_kit": false,
+            "criticality": "medium"
+          },
+          {
+            "resource_id": "TOOL-005",
+            "resource_type": "tool",
+            "quantity": 1,
+            "requires_certification": true
+          },
+          {
+            "resource_id": "WS-003",
+            "resource_type": "workspace",
+            "quantity": 1,
+            "required_certifications": [
+              "电气",
+              "液压"
+            ]
+          }
+        ],
+        "predecessor_jobs": [
+          "WP-ENH-003-JOB-01"
+        ],
+        "constraints": {
+          "max_parallel_resources": 4,
+          "preferred_start_time": null,
+          "must_complete_by": "2025-09-01T22:33:22.910416",
+          "allow_overtime": true
+        },
+        "quality_requirements": {
+          "inspection_required": false,
+          "certification_level": "standard",
+          "documentation_required": true
+        }
+      }
+    ],
+    "resources": [
+      {
+        "resource_id": "MAT-001",
+        "resource_type": "material",
+        "name": "滤芯",
+        "description": "用于发动机维修的滤芯",
+        "part_number": "PN-89037",
+        "total_quantity": 18,
+        "available_quantity": 7,
+        "required_quantity": 1,
+        "must_kit": false,
+        "allow_partial": false,
+        "eta": "2025-08-15T22:33:22.910548",
+        "lead_time_days": 6,
+        "storage_location": "货架-B-08",
+        "qec_shelf_slot": "C-01-11",
+        "unit_cost": 2305.06807279518,
+        "criticality": "medium",
+        "is_ready": true,
+        "is_kitted": false,
+        "current_status": "in_transit"
+      },
+      {
+        "resource_id": "MAT-002",
+        "resource_type": "material",
+        "name": "涡轮叶片",
+        "description": "用于发动机维修的涡轮叶片",
+        "part_number": "PN-86707",
+        "total_quantity": 43,
+        "available_quantity": 2,
+        "required_quantity": 2,
+        "must_kit": false,
+        "allow_partial": false,
+        "eta": "2025-08-25T22:33:22.910704",
+        "lead_time_days": 2,
+        "storage_location": "货架-A-11",
+        "qec_shelf_slot": "B-09-07",
+        "unit_cost": 478.5089871641619,
+        "criticality": "medium",
+        "is_ready": false,
+        "is_kitted": false,
+        "current_status": "available"
+      },
+      {
+        "resource_id": "MAT-003",
+        "resource_type": "material",
+        "name": "压气机叶片",
+        "description": "用于发动机维修的压气机叶片",
+        "part_number": "PN-43246",
+        "total_quantity": 17,
+        "available_quantity": 7,
+        "required_quantity": 3,
+        "must_kit": false,
+        "allow_partial": false,
+        "eta": "2025-08-16T22:33:22.910858",
+        "lead_time_days": 29,
+        "storage_location": "货架-B-09",
+        "qec_shelf_slot": "C-07-15",
+        "unit_cost": 4507.6137253259,
+        "criticality": "low",
+        "is_ready": false,
+        "is_kitted": true,
+        "current_status": "in_transit"
+      },
+      {
+        "resource_id": "MAT-004",
+        "resource_type": "material",
+        "name": "燃油喷嘴",
+        "description": "用于发动机维修的燃油喷嘴",
+        "part_number": "PN-24169",
+        "total_quantity": 45,
+        "available_quantity": 9,
+        "required_quantity": 2,
+        "must_kit": false,
+        "allow_partial": false,
+        "eta": "2025-08-15T22:33:22.910969",
+        "lead_time_days": 17,
+        "storage_location": "货架-A-08",
+        "qec_shelf_slot": "B-07-14",
+        "unit_cost": 2667.273256047628,
+        "criticality": "low",
+        "is_ready": false,
+        "is_kitted": false,
+        "current_status": "in_transit"
+      },
+      {
+        "resource_id": "MAT-005",
+        "resource_type": "material",
+        "name": "轴承",
+        "description": "用于发动机维修的轴承",
+        "part_number": "PN-10008",
+        "total_quantity": 41,
+        "available_quantity": 4,
+        "required_quantity": 1,
+        "must_kit": false,
+        "allow_partial": true,
+        "eta": "2025-08-19T22:33:22.911079",
+        "lead_time_days": 11,
+        "storage_location": "货架-C-04",
+        "qec_shelf_slot": "B-08-18",
+        "unit_cost": 2895.570903634836,
+        "criticality": "medium",
+        "is_ready": true,
+        "is_kitted": true,
+        "current_status": "in_transit"
+      },
+      {
+        "resource_id": "MAT-006",
+        "resource_type": "material",
+        "name": "发动机密封圈",
+        "description": "用于发动机维修的发动机密封圈",
+        "part_number": "PN-54702",
+        "total_quantity": 29,
+        "available_quantity": 8,
+        "required_quantity": 1,
+        "must_kit": false,
+        "allow_partial": true,
+        "eta": "2025-08-27T22:33:22.911197",
+        "lead_time_days": 4,
+        "storage_location": "货架-B-20",
+        "qec_shelf_slot": "B-07-04",
+        "unit_cost": 2857.0156928274296,
+        "criticality": "medium",
+        "is_ready": false,
+        "is_kitted": true,
+        "current_status": "available"
+      },
+      {
+        "resource_id": "MAT-007",
+        "resource_type": "material",
+        "name": "燃油喷嘴",
+        "description": "用于发动机维修的燃油喷嘴",
+        "part_number": "PN-90127",
+        "total_quantity": 11,
+        "available_quantity": 2,
+        "required_quantity": 2,
+        "must_kit": false,
+        "allow_partial": true,
+        "eta": "2025-08-20T22:33:22.911334",
+        "lead_time_days": 17,
+        "storage_location": "货架-A-09",
+        "qec_shelf_slot": "B-01-17",
+        "unit_cost": 257.1568663085378,
+        "criticality": "high",
+        "is_ready": false,
+        "is_kitted": true,
+        "current_status": "in_transit"
+      },
+      {
+        "resource_id": "MAT-008",
+        "resource_type": "material",
+        "name": "齿轮",
+        "description": "用于发动机维修的齿轮",
+        "part_number": "PN-76518",
+        "total_quantity": 25,
+        "available_quantity": 10,
+        "required_quantity": 2,
+        "must_kit": true,
+        "allow_partial": true,
+        "eta": "2025-08-21T22:33:22.911400",
+        "lead_time_days": 16,
+        "storage_location": "货架-C-02",
+        "qec_shelf_slot": "A-02-04",
+        "unit_cost": 1792.2063452918792,
+        "criticality": "medium",
+        "is_ready": true,
+        "is_kitted": true,
+        "current_status": "reserved"
+      },
+      {
+        "resource_id": "MAT-009",
+        "resource_type": "material",
+        "name": "燃油喷嘴",
+        "description": "用于发动机维修的燃油喷嘴",
+        "part_number": "PN-76593",
+        "total_quantity": 20,
+        "available_quantity": 6,
+        "required_quantity": 5,
+        "must_kit": false,
+        "allow_partial": true,
+        "eta": "2025-08-26T22:33:22.911459",
+        "lead_time_days": 2,
+        "storage_location": "货架-A-12",
+        "qec_shelf_slot": "A-01-15",
+        "unit_cost": 1509.9238753629213,
+        "criticality": "high",
+        "is_ready": false,
+        "is_kitted": false,
+        "current_status": "maintenance"
+      },
+      {
+        "resource_id": "MAT-010",
+        "resource_type": "material",
+        "name": "传感器",
+        "description": "用于发动机维修的传感器",
+        "part_number": "PN-51235",
+        "total_quantity": 14,
+        "available_quantity": 1,
+        "required_quantity": 4,
+        "must_kit": true,
+        "allow_partial": true,
+        "eta": "2025-08-21T22:33:22.911516",
+        "lead_time_days": 9,
+        "storage_location": "货架-B-11",
+        "qec_shelf_slot": "B-05-17",
+        "unit_cost": 1158.3210837573376,
+        "criticality": "low",
+        "is_ready": true,
+        "is_kitted": false,
+        "current_status": "reserved"
+      },
+      {
+        "resource_id": "EQP-001",
+        "resource_type": "equipment",
+        "name": "发动机吊车",
+        "description": "发动机吊车 - 5T",
+        "model": "Model-509",
+        "serial_number": "SN-889418",
+        "manufacturer": "厂商A",
+        "total_quantity": 1,
+        "available_quantity": 1,
+        "capacity_limits": {
+          "max_load": "5T",
+          "max_concurrent_jobs": 1
+        },
+        "is_exclusive": true,
+        "exclusive_group": "EQP_GROUP_CRANE",
+        "last_maintenance": "2025-06-05T22:33:22.911626",
+        "next_maintenance": "2025-09-20T22:33:22.911663",
+        "maintenance_interval_hours": 375,
+        "availability_schedule": {
+          "start_time": "06:00",
+          "end_time": "22:00",
+          "working_days": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday"
+          ]
+        },
+        "hourly_cost": 853.0717016906249,
+        "setup_cost": 284.965908240197,
+        "location": "车间A",
+        "area": "工位区域4",
+        "current_status": "busy"
+      },
+      {
+        "resource_id": "EQP-002",
+        "resource_type": "equipment",
+        "name": "平衡机",
+        "description": "平衡机 - 动平衡",
+        "model": "Model-439",
+        "serial_number": "SN-405387",
+        "manufacturer": "厂商C",
+        "total_quantity": 1,
+        "available_quantity": 1,
+        "capacity_limits": {
+          "max_load": "动平衡",
+          "max_concurrent_jobs": 1
+        },
+        "is_exclusive": true,
+        "exclusive_group": "EQP_GROUP_BALANCING",
+        "last_maintenance": "2025-06-10T22:33:22.911760",
+        "next_maintenance": "2025-12-14T22:33:22.911780",
+        "maintenance_interval_hours": 907,
+        "availability_schedule": {
+          "start_time": "06:00",
+          "end_time": "22:00",
+          "working_days": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday"
+          ]
+        },
+        "hourly_cost": 762.8085309461289,
+        "setup_cost": 425.44090579573674,
+        "location": "车间C",
+        "area": "工位区域1",
+        "current_status": "busy"
+      },
+      {
+        "resource_id": "EQP-003",
+        "resource_type": "equipment",
+        "name": "清洗设备",
+        "description": "清洗设备 - 超声波",
+        "model": "Model-207",
+        "serial_number": "SN-800910",
+        "manufacturer": "厂商A",
+        "total_quantity": 1,
+        "available_quantity": 0,
+        "capacity_limits": {
+          "max_load": "超声波",
+          "max_concurrent_jobs": 1
+        },
+        "is_exclusive": true,
+        "exclusive_group": "EQP_GROUP_CLEANING",
+        "last_maintenance": "2025-05-28T22:33:22.911847",
+        "next_maintenance": "2026-01-22T22:33:22.911871",
+        "maintenance_interval_hours": 732,
+        "availability_schedule": {
+          "start_time": "06:00",
+          "end_time": "22:00",
+          "working_days": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday"
+          ]
+        },
+        "hourly_cost": 291.33175518627735,
+        "setup_cost": 322.26387001102023,
+        "location": "车间C",
+        "area": "工位区域5",
+        "current_status": "busy"
+      },
+      {
+        "resource_id": "EQP-004",
+        "resource_type": "equipment",
+        "name": "烘干炉",
+        "description": "烘干炉 - 200°C",
+        "model": "Model-560",
+        "serial_number": "SN-797116",
+        "manufacturer": "厂商B",
+        "total_quantity": 1,
+        "available_quantity": 0,
+        "capacity_limits": {
+          "max_load": "200°C",
+          "max_concurrent_jobs": 1
+        },
+        "is_exclusive": true,
+        "exclusive_group": "EQP_GROUP_HEATING",
+        "last_maintenance": "2025-06-29T22:33:22.911960",
+        "next_maintenance": "2025-10-31T22:33:22.911999",
+        "maintenance_interval_hours": 447,
+        "availability_schedule": {
+          "start_time": "06:00",
+          "end_time": "22:00",
+          "working_days": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday"
+          ]
+        },
+        "hourly_cost": 968.7538340299343,
+        "setup_cost": 115.13842566851996,
+        "location": "车间A",
+        "area": "工位区域5",
+        "current_status": "maintenance"
+      },
+      {
+        "resource_id": "EQP-005",
+        "resource_type": "equipment",
+        "name": "液压测试台",
+        "description": "液压测试台 - 300bar",
+        "model": "Model-901",
+        "serial_number": "SN-441896",
+        "manufacturer": "厂商B",
+        "total_quantity": 1,
+        "available_quantity": 1,
+        "capacity_limits": {
+          "max_load": "300bar",
+          "max_concurrent_jobs": 1
+        },
+        "is_exclusive": true,
+        "exclusive_group": "EQP_GROUP_TEST_EQUIPMENT",
+        "last_maintenance": "2025-05-31T22:33:22.912102",
+        "next_maintenance": "2025-10-08T22:33:22.912127",
+        "maintenance_interval_hours": 823,
+        "availability_schedule": {
+          "start_time": "06:00",
+          "end_time": "22:00",
+          "working_days": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday"
+          ]
+        },
+        "hourly_cost": 720.7041462038674,
+        "setup_cost": 255.6519425819068,
+        "location": "车间C",
+        "area": "工位区域4",
+        "current_status": "maintenance"
+      },
+      {
+        "resource_id": "TOOL-001",
+        "resource_type": "tool",
+        "name": "专用拆装工具",
+        "description": "专业维修用专用拆装工具",
+        "model": "T-538",
+        "total_quantity": 3,
+        "available_quantity": 1,
+        "calibration_due": "2025-12-05T22:33:22.912207",
+        "calibration_interval_days": 117,
+        "max_concurrent_users": 1,
+        "requires_certification": true,
+        "hourly_cost": 73.56738222352973,
+        "storage_location": "工具柜-A-17",
+        "current_status": "repair"
+      },
+      {
+        "resource_id": "TOOL-002",
+        "resource_type": "tool",
+        "name": "专用拆装工具",
+        "description": "专业维修用专用拆装工具",
+        "model": "T-286",
+        "total_quantity": 1,
+        "available_quantity": 2,
+        "calibration_due": "2026-04-20T22:33:22.912356",
+        "calibration_interval_days": 283,
+        "max_concurrent_users": 1,
+        "requires_certification": true,
+        "hourly_cost": 66.55011247422001,
+        "storage_location": "工具柜-B-18",
+        "current_status": "in_use"
+      },
+      {
+        "resource_id": "TOOL-003",
+        "resource_type": "tool",
+        "name": "扭力扳手",
+        "description": "专业维修用扭力扳手",
+        "model": "T-191",
+        "total_quantity": 5,
+        "available_quantity": 2,
+        "calibration_due": "2026-05-26T22:33:22.912414",
+        "calibration_interval_days": 172,
+        "max_concurrent_users": 3,
+        "requires_certification": true,
+        "hourly_cost": 60.94524008384875,
+        "storage_location": "工具柜-B-14",
+        "current_status": "in_use"
+      },
+      {
+        "resource_id": "TOOL-004",
+        "resource_type": "tool",
+        "name": "内窥镜",
+        "description": "专业维修用内窥镜",
+        "model": "T-354",
+        "total_quantity": 2,
+        "available_quantity": 2,
+        "calibration_due": "2026-07-18T22:33:22.912461",
+        "calibration_interval_days": 334,
+        "max_concurrent_users": 1,
+        "requires_certification": true,
+        "hourly_cost": 28.375047241063207,
+        "storage_location": "工具柜-A-15",
+        "current_status": "available"
+      },
+      {
+        "resource_id": "TOOL-005",
+        "resource_type": "tool",
+        "name": "振动仪",
+        "description": "专业维修用振动仪",
+        "model": "T-804",
+        "total_quantity": 5,
+        "available_quantity": 1,
+        "calibration_due": "2025-11-14T22:33:22.912526",
+        "calibration_interval_days": 176,
+        "max_concurrent_users": 3,
+        "requires_certification": true,
+        "hourly_cost": 47.410616951571726,
+        "storage_location": "工具柜-C-13",
+        "current_status": "calibration"
+      },
+      {
+        "resource_id": "TOOL-006",
+        "resource_type": "tool",
+        "name": "振动仪",
+        "description": "专业维修用振动仪",
+        "model": "T-886",
+        "total_quantity": 4,
+        "available_quantity": 3,
+        "calibration_due": "2026-07-30T22:33:22.912586",
+        "calibration_interval_days": 92,
+        "max_concurrent_users": 2,
+        "requires_certification": true,
+        "hourly_cost": 75.96076622851673,
+        "storage_location": "工具柜-B-13",
+        "current_status": "repair"
+      },
+      {
+        "resource_id": "TOOL-007",
+        "resource_type": "tool",
+        "name": "测厚仪",
+        "description": "专业维修用测厚仪",
+        "model": "T-377",
+        "total_quantity": 2,
+        "available_quantity": 1,
+        "calibration_due": "2025-12-19T22:33:22.912664",
+        "calibration_interval_days": 243,
+        "max_concurrent_users": 3,
+        "requires_certification": false,
+        "hourly_cost": 70.36562928076218,
+        "storage_location": "工具柜-C-6",
+        "current_status": "calibration"
+      },
+      {
+        "resource_id": "TOOL-008",
+        "resource_type": "tool",
+        "name": "温度计",
+        "description": "专业维修用温度计",
+        "model": "T-747",
+        "total_quantity": 3,
+        "available_quantity": 1,
+        "calibration_due": "2025-11-22T22:33:22.912741",
+        "calibration_interval_days": 208,
+        "max_concurrent_users": 1,
+        "requires_certification": false,
+        "hourly_cost": 35.80415658300282,
+        "storage_location": "工具柜-A-10",
+        "current_status": "calibration"
+      },
+      {
+        "resource_id": "WS-001",
+        "resource_type": "workspace",
+        "name": "拆解工位",
+        "description": "拆解工位 - 最大容量2个任务",
+        "total_quantity": 2,
+        "available_quantity": 1,
+        "max_concurrent_jobs": 2,
+        "location": "拆解区",
+        "area": "拆解区",
+        "equipped_tools": [
+          "TOOL-005",
+          "TOOL-005",
+          "TOOL-007"
+        ],
+        "required_certifications": [
+          "电气",
+          "机械"
+        ],
+        "availability_schedule": {
+          "start_time": "07:00",
+          "end_time": "19:00",
+          "working_days": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday"
+          ]
+        },
+        "hourly_cost": 90.4318853085726,
+        "current_status": "occupied"
+      },
+      {
+        "resource_id": "WS-002",
+        "resource_type": "workspace",
+        "name": "清洗工位",
+        "description": "清洗工位 - 最大容量1个任务",
+        "total_quantity": 1,
+        "available_quantity": 1,
+        "max_concurrent_jobs": 1,
+        "location": "清洗区",
+        "area": "清洗区",
+        "equipped_tools": [
+          "TOOL-002",
+          "TOOL-007",
+          "TOOL-008"
+        ],
+        "required_certifications": [
+          "液压"
+        ],
+        "availability_schedule": {
+          "start_time": "07:00",
+          "end_time": "19:00",
+          "working_days": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday"
+          ]
+        },
+        "hourly_cost": 138.25512403875894,
+        "current_status": "maintenance"
+      },
+      {
+        "resource_id": "WS-003",
+        "resource_type": "workspace",
+        "name": "检查工位",
+        "description": "检查工位 - 最大容量3个任务",
+        "total_quantity": 3,
+        "available_quantity": 0,
+        "max_concurrent_jobs": 3,
+        "location": "检查区",
+        "area": "检查区",
+        "equipped_tools": [
+          "TOOL-002"
+        ],
+        "required_certifications": [
+          "电气",
+          "液压"
+        ],
+        "availability_schedule": {
+          "start_time": "07:00",
+          "end_time": "19:00",
+          "working_days": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday"
+          ]
+        },
+        "hourly_cost": 59.923323435101445,
+        "current_status": "available"
+      },
+      {
+        "resource_id": "WS-004",
+        "resource_type": "workspace",
+        "name": "装配工位",
+        "description": "装配工位 - 最大容量2个任务",
+        "total_quantity": 2,
+        "available_quantity": 0,
+        "max_concurrent_jobs": 2,
+        "location": "装配区",
+        "area": "装配区",
+        "equipped_tools": [
+          "TOOL-002",
+          "TOOL-005"
+        ],
+        "required_certifications": [
+          "机械",
+          "液压"
+        ],
+        "availability_schedule": {
+          "start_time": "07:00",
+          "end_time": "19:00",
+          "working_days": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday"
+          ]
+        },
+        "hourly_cost": 141.1184767145412,
+        "current_status": "occupied"
+      },
+      {
+        "resource_id": "WS-005",
+        "resource_type": "workspace",
+        "name": "测试工位",
+        "description": "测试工位 - 最大容量1个任务",
+        "total_quantity": 1,
+        "available_quantity": 1,
+        "max_concurrent_jobs": 1,
+        "location": "测试区",
+        "area": "测试区",
+        "equipped_tools": [
+          "TOOL-003",
+          "TOOL-004",
+          "TOOL-005"
+        ],
+        "required_certifications": [
+          "机械",
+          "液压"
+        ],
+        "availability_schedule": {
+          "start_time": "07:00",
+          "end_time": "19:00",
+          "working_days": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday"
+          ]
+        },
+        "hourly_cost": 167.8971057824999,
+        "current_status": "occupied"
+      },
+      {
+        "resource_id": "TECH-001",
+        "resource_type": "human",
+        "employee_id": "EMP-001",
+        "name": "张师傅",
+        "qualifications": [
+          "控制",
+          "机械",
+          "液压",
+          "燃油"
+        ],
+        "skill_levels": {
+          "电气": 2,
+          "机械": 3,
+          "液压": 4,
+          "燃油": 4,
+          "控制": 5
+        },
+        "experience_years": 19.588992798879854,
+        "performance_rating": 4.506770020196284,
+        "availability": {
+          "start_time": "08:00",
+          "end_time": "18:00",
+          "working_days": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday"
+          ]
+        },
+        "hourly_rate": 116.25578266243379,
+        "max_overtime_hours": 4.021980235532839,
+        "current_status": "on_leave"
+      },
+      {
+        "resource_id": "TECH-002",
+        "resource_type": "human",
+        "employee_id": "EMP-002",
+        "name": "李技师",
+        "qualifications": [
+          "燃油",
+          "液压"
+        ],
+        "skill_levels": {
+          "电气": 2,
+          "机械": 3,
+          "液压": 4,
+          "燃油": 3,
+          "控制": 3
+        },
+        "experience_years": 10.557490551659273,
+        "performance_rating": 3.392441399695121,
+        "availability": {
+          "start_time": "08:00",
+          "end_time": "18:00",
+          "working_days": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday"
+          ]
+        },
+        "hourly_rate": 74.57899316682227,
+        "max_overtime_hours": 4.212632092533013,
+        "current_status": "on_leave"
+      },
+      {
+        "resource_id": "TECH-003",
+        "resource_type": "human",
+        "employee_id": "EMP-003",
+        "name": "王工程师",
+        "qualifications": [
+          "液压",
+          "电气"
+        ],
+        "skill_levels": {
+          "电气": 1,
+          "机械": 4,
+          "液压": 2,
+          "燃油": 3,
+          "控制": 3
+        },
+        "experience_years": 17.103133264600913,
+        "performance_rating": 3.8190402171935673,
+        "availability": {
+          "start_time": "08:00",
+          "end_time": "18:00",
+          "working_days": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday"
+          ]
+        },
+        "hourly_rate": 84.10870559165723,
+        "max_overtime_hours": 4.498627739327814,
+        "current_status": "busy"
+      },
+      {
+        "resource_id": "TECH-004",
+        "resource_type": "human",
+        "employee_id": "EMP-004",
+        "name": "刘专家",
+        "qualifications": [
+          "液压",
+          "燃油"
+        ],
+        "skill_levels": {
+          "电气": 1,
+          "机械": 5,
+          "液压": 4,
+          "燃油": 3,
+          "控制": 1
+        },
+        "experience_years": 14.45380660126032,
+        "performance_rating": 4.858999049167025,
+        "availability": {
+          "start_time": "08:00",
+          "end_time": "18:00",
+          "working_days": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday"
+          ]
+        },
+        "hourly_rate": 86.64033094611565,
+        "max_overtime_hours": 5.767074168152981,
+        "current_status": "on_leave"
+      },
+      {
+        "resource_id": "TECH-005",
+        "resource_type": "human",
+        "employee_id": "EMP-005",
+        "name": "陈主管",
+        "qualifications": [
+          "液压",
+          "控制",
+          "电气"
+        ],
+        "skill_levels": {
+          "电气": 5,
+          "机械": 4,
+          "液压": 5,
+          "燃油": 3,
+          "控制": 3
+        },
+        "experience_years": 14.76053115641883,
+        "performance_rating": 3.0706630998039026,
+        "availability": {
+          "start_time": "08:00",
+          "end_time": "18:00",
+          "working_days": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday"
+          ]
+        },
+        "hourly_rate": 103.4638077921839,
+        "max_overtime_hours": 2.6241872673018682,
+        "current_status": "available"
+      }
+    ],
+    "constraints": {
+      "plan_start_time": "2025-08-17T22:33:22.916422",
+      "plan_end_time": "2025-10-16T22:33:22.916556",
+      "max_working_hours_per_day": 8,
+      "min_break_hours": 1,
+      "max_overtime_hours_per_day": 4,
+      "weekend_work_allowed": false,
+      "resource_change_penalty": 100.0
+    },
+    "objectives": {
+      "priority_template": "cost_optimized",
+      "minimize_makespan": true,
+      "maximize_resource_utilization": true,
+      "minimize_total_cost": true,
+      "minimize_material_waste": true
+    }
+  },
+  "metadata": {
+    "generated_at": "2025-08-17T22:33:22.916605",
+    "scenario": "standard",
+    "generator_version": "1.0.0",
+    "total_resources": 33,
+    "resource_breakdown": {
+      "materials": 10,
+      "equipment": 5,
+      "tools": 8,
+      "workspaces": 5,
+      "humans": 5
+    }
+  }
+}

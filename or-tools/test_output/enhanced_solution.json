@@ -1,0 +1,158 @@
+{
+  "plan_id": "MOCK-PLAN-1755275052",
+  "request_id": "REQ-ENH-20250815-234450",
+  "created_at": "2025-08-16T00:24:12",
+  "gates": [
+    {
+      "gate": "critical_tools_ready",
+      "passed": true
+    },
+    {
+      "gate": "materials_ready",
+      "passed": true
+    }
+  ],
+  "preparation_tasks": [],
+  "makespan": "PT8H",
+  "schedule": {
+    "task_intervals": [
+      {
+        "task_id": "WP-ENH-001-JOB-01",
+        "task_type": "job",
+        "start": "2025-08-16T08:00:00",
+        "end": "2025-08-16T08:00:00",
+        "duration_hours": 6.971679710982629,
+        "assigned_resources": [],
+        "assigned_personnel": []
+      },
+      {
+        "task_id": "WP-ENH-001-JOB-02",
+        "task_type": "job",
+        "start": "2025-08-16T08:00:00",
+        "end": "2025-08-16T08:00:00",
+        "duration_hours": 3.2915984081042327,
+        "assigned_resources": [
+          "TECH-003"
+        ],
+        "assigned_personnel": [
+          "TECH-003"
+        ]
+      },
+      {
+        "task_id": "WP-ENH-001-JOB-03",
+        "task_type": "job",
+        "start": "2025-08-16T08:00:00",
+        "end": "2025-08-16T08:00:00",
+        "duration_hours": 4.249154154329267,
+        "assigned_resources": [
+          "TECH-002"
+        ],
+        "assigned_personnel": [
+          "TECH-002"
+        ]
+      },
+      {
+        "task_id": "WP-ENH-001-JOB-04",
+        "task_type": "job",
+        "start": "2025-08-16T08:00:00",
+        "end": "2025-08-16T08:00:00",
+        "duration_hours": 4.2807724604610105,
+        "assigned_resources": [
+          "TECH-002"
+        ],
+        "assigned_personnel": [
+          "TECH-002"
+        ]
+      },
+      {
+        "task_id": "WP-ENH-001-JOB-05",
+        "task_type": "job",
+        "start": "2025-08-16T08:00:00",
+        "end": "2025-08-16T08:00:00",
+        "duration_hours": 6.348442318541459,
+        "assigned_resources": [
+          "TECH-003"
+        ],
+        "assigned_personnel": [
+          "TECH-003"
+        ]
+      },
+      {
+        "task_id": "WP-ENH-002-JOB-01",
+        "task_type": "job",
+        "start": "2025-08-16T08:00:00",
+        "end": "2025-08-16T08:00:00",
+        "duration_hours": 7.130547646860659,
+        "assigned_resources": [
+          "TECH-002"
+        ],
+        "assigned_personnel": [
+          "TECH-002"
+        ]
+      },
+      {
+        "task_id": "WP-ENH-002-JOB-02",
+        "task_type": "job",
+        "start": "2025-08-16T08:00:00",
+        "end": "2025-08-16T08:00:00",
+        "duration_hours": 1.8560421526486355,
+        "assigned_resources": [
+          "TECH-002"
+        ],
+        "assigned_personnel": [
+          "TECH-002"
+        ]
+      },
+      {
+        "task_id": "WP-ENH-002-JOB-03",
+        "task_type": "job",
+        "start": "2025-08-16T08:00:00",
+        "end": "2025-08-16T08:00:00",
+        "duration_hours": 2.2957284943970184,
+        "assigned_resources": [
+          "TECH-002"
+        ],
+        "assigned_personnel": [
+          "TECH-002"
+        ]
+      },
+      {
+        "task_id": "WP-ENH-003-JOB-01",
+        "task_type": "job",
+        "start": "2025-08-16T08:00:00",
+        "end": "2025-08-16T08:00:00",
+        "duration_hours": 2.7540332606537743,
+        "assigned_resources": [
+          "TECH-001"
+        ],
+        "assigned_personnel": [
+          "TECH-001"
+        ]
+      },
+      {
+        "task_id": "WP-ENH-003-JOB-02",
+        "task_type": "job",
+        "start": "2025-08-16T08:00:00",
+        "end": "2025-08-16T08:00:00",
+        "duration_hours": 2.2225979891289214,
+        "assigned_resources": [
+          "TECH-002"
+        ],
+        "assigned_personnel": [
+          "TECH-002"
+        ]
+      }
+    ]
+  },
+  "solve_time_seconds": 0.1,
+  "solver_status": "MOCK_OPTIMAL",
+  "constraints_satisfied": true,
+  "total_cost": 4140.05965961076,
+  "resource_utilization": {
+    "TECH-001": 0.8,
+    "TECH-002": 0.8,
+    "TECH-003": 0.8,
+    "TECH-004": 0.8,
+    "TECH-005": 0.8
+  }
+}

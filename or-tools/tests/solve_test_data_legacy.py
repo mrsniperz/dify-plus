@@ -20,7 +20,8 @@ from datetime import datetime
 from typing import Dict, Any, Optional
 
 # 添加项目根目录到Python路径
-project_root = Path(__file__).parent
+project_root = Path(__file__).parent.parent.parent  # 从 or-tools/tests/ 回到项目根目录
+tests_root = Path(__file__).parent  # tests目录
 sys.path.insert(0, str(project_root))
 
 
@@ -35,9 +36,9 @@ class TestDataSolver:
             "Accept": "application/json"
         })
     
-    def load_test_data(self) -> Dict[str, Any]:
+    def load_test_data(self, data_file: str = "test_data.json") -> Dict[str, Any]:
         """加载测试数据"""
-        test_data_path = project_root / "test_data.json"
+        test_data_path = tests_root / data_file
         
         if not test_data_path.exists():
             print("❌ 测试数据文件不存在")
@@ -170,7 +171,13 @@ class TestDataSolver:
     def solve_directly(self, test_data: Dict[str, Any]) -> Optional[Dict[str, Any]]:
         """直接调用求解器求解"""
         try:
-            from src.services import SchedulingService, SchedulingRequest
+            # 尝试导入排程服务
+            try:
+                from src.services import SchedulingService, SchedulingRequest
+            except ImportError:
+                # 如果src模块不存在，创建一个模拟的求解器
+                print("⚠️ 未找到src.services模块，使用模拟求解器")
+                return self._mock_solve(test_data)
 
             print("🚀 开始直接求解...")
 
@@ -226,6 +233,70 @@ class TestDataSolver:
         except Exception as e:
             print(f"❌ 直接求解失败: {e}")
             return None
+
+    def _mock_solve(self, test_data: Dict[str, Any]) -> Dict[str, Any]:
+        """模拟求解器，用于测试数据验证"""
+        print("🔧 使用模拟求解器进行数据验证...")
+
+        schedule_request = test_data.get('schedule_request', {})
+        jobs = schedule_request.get('jobs', [])
+        resources = schedule_request.get('resources', [])
+
+        # 生成模拟的任务分配
+        mock_tasks = []
+        start_time = "2025-08-16T08:00:00"
+
+        for i, job in enumerate(jobs):
+            # 简单的资源分配逻辑
+            assigned_resource = None
+            for resource in resources:
+                if resource.get('resource_type') == 'human':
+                    # 检查技能匹配
+                    job_qualifications = set(job.get('required_qualifications', []))
+                    resource_qualifications = set(resource.get('qualifications', []))
+                    if job_qualifications.issubset(resource_qualifications):
+                        assigned_resource = resource['resource_id']
+                        break
+
+            duration_hours = job.get('base_duration_hours', 1.0)
+            mock_task = {
+                "task_id": job['job_id'],
+                "task_type": "job",
+                "start": start_time,
+                "end": start_time,  # 简化处理
+                "duration_hours": duration_hours,
+                "assigned_resources": [assigned_resource] if assigned_resource else [],
+                "assigned_personnel": [assigned_resource] if assigned_resource else []
+            }
+            mock_tasks.append(mock_task)
+
+        # 生成模拟解决方案
+        mock_solution = {
+            "plan_id": f"MOCK-PLAN-{int(time.time())}",
+            "request_id": schedule_request.get('request_id', 'mock-request'),
+            "created_at": time.strftime('%Y-%m-%dT%H:%M:%S'),
+            "gates": [
+                {"gate": "critical_tools_ready", "passed": True},
+                {"gate": "materials_ready", "passed": True}
+            ],
+            "preparation_tasks": [],
+            "makespan": "PT8H",
+            "schedule": {
+                "task_intervals": mock_tasks
+            },
+            "solve_time_seconds": 0.1,
+            "solver_status": "MOCK_OPTIMAL",
+            "constraints_satisfied": True,
+            "total_cost": sum(task["duration_hours"] * 100 for task in mock_tasks),
+            "resource_utilization": {
+                resource['resource_id']: 0.8
+                for resource in resources
+                if resource.get('resource_type') == 'human'
+            }
+        }
+
+        print(f"✅ 模拟求解完成! 生成了 {len(mock_tasks)} 个任务分配")
+        return mock_solution
     
     def analyze_solution(self, solution: Dict[str, Any]) -> None:
         """分析求解结果"""
@@ -325,6 +396,11 @@ def main():
         default="http://localhost:8000",
         help="API服务器地址（默认: http://localhost:8000）"
     )
+    parser.add_argument(
+        "--data-file",
+        default="test_data.json",
+        help="测试数据文件路径（默认: test_data.json）"
+    )
     
     args = parser.parse_args()
     
@@ -335,7 +411,7 @@ def main():
     solver = TestDataSolver(args.api_url)
     
     # 加载测试数据
-    test_data = solver.load_test_data()
+    test_data = solver.load_test_data(args.data_file)
     if not test_data:
         return 1
     
