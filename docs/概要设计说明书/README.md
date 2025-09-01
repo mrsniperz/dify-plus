@@ -627,6 +627,98 @@ erDiagram
 - 内容包含：操作人、时间、对象、差异、原因与备注。  
 - 保留期限：≥12个月；支持导出与稽核查询。
 
+##### 4.3.1.13 外部知识库接入与管理设计
+功能描述  
+• 通过标准化检索 API 接入外部知识库，作为内部知识的补充数据源，实现统一召回、重排与引用展示，避免跨系统内容搬运。
+
+架构与组件  
+- 配置管理：保存外部端点、认证凭据、外部库 ID、默认 TopK/Score/过滤器；
+- 连接器（Connector）：封装 HTTP/鉴权/超时/重试；
+- 标准化适配层：将外部返回转换为统一的分段结构（content、source_ref、score、locators）；
+- 合并与重排器：与内部候选集合并去重并按策略重排；
+- 监控告警：可用率、超时率、配额余量、错误码趋势。
+
+交互流程  
+1) 读取外部连接配置→2) 发起检索请求→3) 解析并标准化→4) 与内部结果合并重排→5) 返回统一引用。  
+失败时降级为内部检索，并记录事件与指标。
+
+关键参数  
+- endpoint、credential、external_kb_id、top_k、score_threshold、filters。
+
+输入输出规范  
+| 参数 | 类型 | 约束 | 示例 |
+|---|---|---|---|
+| externalKbId | string | 可选 | "kb-ext-01" |
+| query | string | 非空，≤2000 | "燃油泄漏排查" |
+| maxSegments | int | 1~50 | 8 |
+| minRelevance | float | 0~1 | 0.5 |
+
+接口定义  
+```http
+POST /kb/external/search
+body: { query, externalKbId?, maxSegments?, minRelevance? }
+errors: 401 unauthorized, 408 timeout, 422 invalid_param
+```
+
+##### 4.3.1.14 检索方式与重排策略设计
+功能描述  
+• 提供向量/关键词/混合检索与父子分段上下文合并，多阶段重排（规则/模型）提升命中质量、覆盖与可解释性。
+
+策略要点  
+- 初检索：内部与外部数据源并行召回；
+- 上下文合并：对子分段命中合并父分段上下文；
+- 重排：去冗与多样性（近似合并/同源覆盖率控制）、重要性提升（标题/关键词/字段权重）、基于相关度的 MMR 思路；
+- 终排：输出 TopK 与引用信息（文档、章节/页码/段落、分数）。
+
+配置与范围  
+- 知识库级默认策略与应用级覆盖策略并存；
+- 可保存多版本策略用于 A/B 与灰度发布。
+
+输入输出规范  
+| 参数 | 类型 | 约束 | 示例 |
+|---|---|---|---|
+| mode | enum | vector/keyword/hybrid | "hybrid" |
+| parentMerge | bool | 默认true | true |
+| maxPerDoc | int | 1~10 | 3 |
+
+接口定义  
+```http
+POST /kb/retrieval/preview
+body: { query, mode, parentMerge?, maxPerDoc? }
+errors: 422 invalid_param, 500 internal_error
+```
+
+##### 4.3.1.15 检索质量监控与治理设计
+功能描述  
+• 提供召回测试台、用例集校验、指标看板与发布门禁，支持策略版本化与快速回滚。
+
+指标与观测  
+- 召回命中率、平均分、引用点击率、用户反馈；
+- 时延（P50/P95）、超时率、外部连接可用率；
+- A/B 对比增益与显著性。
+
+流程  
+1) 汇集应用检索日志→2) 维护测试用例集→3) 测试台调参与对比→4) 生成报告与门禁→5) 发布/回滚与审计。
+
+门禁与治理  
+- 未达标阻断发布；
+- 词表与策略变更纳入审计；
+- 支持一键回滚。
+
+输入输出规范  
+| 参数 | 类型 | 约束 | 示例 |
+|---|---|---|---|
+| testcaseSetId | string | 可选 | "tc-2025w10" |
+| gateMinRecall | float | 0~1 | 0.6 |
+| abWindowDays | int | 1~30 | 7 |
+
+接口定义  
+```http
+POST /kb/quality/eval
+body: { testcaseSetId, gateMinRecall, abWindowDays }
+errors: 409 gate_not_met, 422 invalid_param
+```
+
 #### 4.3.2 维修规划及资源智能化模块
 
 **功能职责**：
