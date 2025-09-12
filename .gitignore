@@ -209,3 +209,4 @@ mise.toml
 
 # 二开新增 
 docker/volumes/admin-server/*
+*.zip
