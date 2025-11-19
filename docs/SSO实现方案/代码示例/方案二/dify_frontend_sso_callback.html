@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSO登录处理中...</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            padding: 40px;
+            text-align: center;
+            max-width: 400px;
+        }
+        
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            color: #666;
+            margin: 5px 0;
+        }
+        
+        .error {
+            color: #d32f2f;
+            background: #ffebee;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="spinner"></div>
+        <h2>SSO登录处理中</h2>
+        <p id="status">正在验证您的身份...</p>
+        <div id="error" class="error" style="display: none;"></div>
+    </div>
+
+    <script>
+        /**
+         * SSO回调处理脚本
+         * 
+         * 功能:
+         * 1. 从URL参数中获取access_token和refresh_token
+         * 2. 将token存储到localStorage和Cookie
+         * 3. 重定向到指定页面
+         */
+        
+        (function() {
+            const statusEl = document.getElementById('status');
+            const errorEl = document.getElementById('error');
+            
+            try {
+                // 解析URL参数
+                const urlParams = new URLSearchParams(window.location.search);
+                const accessToken = urlParams.get('access_token');
+                const refreshToken = urlParams.get('refresh_token');
+                const redirectPath = urlParams.get('redirect') || '/';
+                
+                // 验证token是否存在
+                if (!accessToken || !refreshToken) {
+                    throw new Error('缺少认证令牌');
+                }
+                
+                statusEl.textContent = '正在保存登录信息...';
+                
+                // 存储token到localStorage
+                localStorage.setItem('console_token', accessToken);
+                localStorage.setItem('refresh_token', refreshToken);
+                
+                // 存储token到Cookie（兼容性处理）
+                document.cookie = `x-token=${accessToken}; path=/; max-age=3600; SameSite=Lax`;
+                
+                // 存储用户登录状态
+                localStorage.setItem('isLoggedIn', 'true');
+                localStorage.setItem('loginTime', new Date().toISOString());
+                
+                statusEl.textContent = '登录成功！正在跳转...';
+                
+                // 延迟跳转以显示成功消息
+                setTimeout(() => {
+                    // 清除URL中的敏感参数
+                    const cleanUrl = window.location.origin + redirectPath;
+                    window.location.replace(cleanUrl);
+                }, 500);
+                
+            } catch (error) {
+                console.error('SSO登录失败:', error);
+                errorEl.textContent = `登录失败: ${error.message}`;
+                errorEl.style.display = 'block';
+                statusEl.textContent = '';
+                
+                // 3秒后跳转到登录页
+                setTimeout(() => {
+                    window.location.href = '/login';
+                }, 3000);
+            }
+        })();
+    </script>
+</body>
+</html>
+
