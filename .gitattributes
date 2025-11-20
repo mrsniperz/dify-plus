@@ -1,7 +1,23 @@
-# Ensure that .sh scripts use LF as line separator, even if they are checked out
-# to Windows(NTFS) file-system, by a user of Docker for Windows. 
-# These .sh scripts will be run from the Container after `docker compose up -d`.
-# If they appear to be CRLF style, Dash from the Container will fail to execute
-# them.
+# 自动处理行尾符差异
+* text=auto
 
-*.sh      text eol=lf
+# 明确指定 JSON 文件的行尾符为 LF（Unix 风格）
+package.json text eol=lf
+package-lock.json text eol=lf
+*.json text eol=lf
+
+# 脚本文件
+*.sh text eol=lf
+*.bash text eol=lf
+
+# 配置文件
+*.yaml text eol=lf
+*.yml text eol=lf
+*.toml text eol=lf
+
+# Web 资源（保持原始格式）
+*.jpg binary
+*.png binary
+*.gif binary
+*.ico binary
+*.svg text
