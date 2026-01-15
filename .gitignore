@@ -207,6 +207,9 @@ plugins.jsonl
 # mise
 mise.toml
 
-# 二开新增 
+# 二开新增
 docker/volumes/admin-server/*
 *.zip
+
+# MCP configuration with sensitive data
+.mcp.json

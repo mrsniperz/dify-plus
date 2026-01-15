@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environment
+venv/
+env/
+ENV/
+
+# Output files
+output/
+*.md
+!README.md
+
+# PDF files
+*.pdf
+pdfs/
+
+# Images
+*.jpg
+*.jpeg
+*.png
+*.gif
+example.*
+
+# Cache
+cache/
+*.pkl
+
+# Environment
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.log

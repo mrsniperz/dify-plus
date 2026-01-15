@@ -1,0 +1,19 @@
+{
+  "env": {
+    "ANTHROPIC_AUTH_TOKEN": "sk-ant-oat01-dRHhbu3v8UIXyGc89WHvRKBCxHkwpiWgUSm2UqoMIOceTS2XQaivJY9aQcxYyDqeXY__TnDYaiImdk896eP6hIjx-Qy7HAA",
+    "ANTHROPIC_BASE_URL": "https://dm-fox.rjj.cc/claude/aws",
+    "API_TIMEOUT_MS": "3000000",
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1"
+  },
+  "defaultMode": "acceptEdits",
+  "permissions": {
+    "allow": [
+      "Read(*)",
+      "Edit(*)",
+      "Write(*)",
+      "Bash(python*,pip*,pytest*,git*,conda*,poetry*,uv*,black*,flake*,mypy*,isort*)",
+      "Bash(ls,cd,pwd,echo,cat,find,grep)"
+    ],
+    "deny": ["Bash(sudo,rm -rf,shutdown,reboot)"]
+  }
+}

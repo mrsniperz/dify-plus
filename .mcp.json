@@ -1,0 +1,62 @@
+{
+    "mcpServers": {
+        "github": {
+            "type": "http",
+            "url": "https://api.githubcopilot.com/mcp",
+            "headers": {
+                "Authorization": "YOUR_GITHUB_PAT_TOKEN"
+            }
+        },
+        "context7": {
+            "command": "npx",
+            "args": ["-y", "@upstash/context7-mcp"],
+            "disabled": false,
+            "autoApprove": []
+        },
+        "playwright": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@executeautomation/playwright-mcp-server",
+                "--extension"
+            ],
+            "disabled": false,
+            "autoApprove": []
+        },
+        "sequential-thinking": {
+            "command": "npx",
+            "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"],
+            "disabled": false,
+            "autoApprove": []
+        },
+        "antv-chart": {
+            "command": "npx",
+            "args": ["-y", "@antv/mcp-server-chart"],
+            "disabled": false,
+            "autoApprove": []
+        },
+        "web-reader": {
+            "type": "http",
+            "url": "https://open.bigmodel.cn/api/mcp/web_reader/mcp",
+            "headers": {
+                "Authorization": "YOUR_ZHIPU_API_KEY"
+            }
+        },
+        "web-search-prime": {
+            "type": "http",
+            "url": "https://open.bigmodel.cn/api/mcp/web_search_prime/mcp",
+            "headers": {
+                "Authorization": "YOUR_ZHIPU_API_KEY"
+            }
+        },
+        "zai-mcp-server": {
+            "type": "stdio",
+            "command": "npx",
+            "args": ["-y", "@z_ai/mcp-server"],
+            "env": {
+                "Z_AI_API_KEY": "YOUR_ZHIPU_API_KEY",
+                "Z_AI_MODE": "ZHIPU"
+            }
+        }
+    }
+}

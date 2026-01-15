@@ -1,0 +1,19 @@
+{
+  "env": {
+    "ANTHROPIC_AUTH_TOKEN": "sk-NdtG7OTwHW9V72h9DZgmCdV5mlLZ1b7tG4SFNVhfmYuVww5R",
+    "ANTHROPIC_BASE_URL": "https://www.packyapi.com",
+    "API_TIMEOUT_MS": "3000000",
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1"
+  },
+  "defaultMode": "acceptEdits",
+  "permissions": {
+    "allow": [
+      "Read(*)",
+      "Edit(*)",
+      "Write(*)",
+      "Bash(python*,pip*,pytest*,git*,conda*,poetry*,uv*,black*,flake*,mypy*,isort*)",
+      "Bash(ls,cd,pwd,echo,cat,find,grep)"
+    ],
+    "deny": ["Bash(sudo,rm -rf,shutdown,reboot)"]
+  }
+}
